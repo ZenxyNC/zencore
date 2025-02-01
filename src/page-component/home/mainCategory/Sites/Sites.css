@@ -1,0 +1,92 @@
+#--Sites-mainDiv {
+  width: calc(100% - 20px);
+  height: calc(100% - 100px);
+  background-color: transparent;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+}
+
+.--Sites-appsButton {
+  width: calc((100% - 10px) / 2);
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
+  transition: 0.8s;
+  box-shadow: 0px 0px 30px -5px rgb(33, 40, 50, 0.8);
+  cursor: pointer;
+}
+.--Sites-appsButton:active {
+  width: calc((100% - 10px) / 2);
+  border-radius: 10px;
+  border: none;
+  background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
+  transition: 0.8s;
+  box-shadow: 0px 0px 30px -5px rgb(33, 40, 50, 0);
+  cursor: pointer;
+}
+.--appsButton-icon {
+  width: 60px;
+  height: 60px
+}
+.--appsButton-name {
+  font-family: 'GSansBold';
+  font-size: 17px;
+  color: #F5F5F5;
+  margin-top: 5px
+}
+
+@media screen and (min-width: 1170px) {
+  #--Sites-mainDiv {
+    width: calc(100% - 70px);
+    height: calc(100% - 115px);
+    background-color: transparent;
+    margin-top: 80px;
+    margin-left: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 30px
+  }
+
+  .--Sites-appsButton {
+    width: calc((100% - 60px) / 3);
+    border-radius: 20px;
+    border: none;
+    background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
+    transition: 0.8s;
+    box-shadow: 0px 0px 30px -5px rgb(33, 40, 50, 0.3);
+    cursor: pointer
+  }
+  .--Sites-appsButton:hover {
+    width: calc((100% - 60px) / 3);
+    border-radius: 20px;
+    border: none;
+    background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
+    transition: 0.8s;
+    box-shadow: 0px 0px 35px 0px rgb(33, 40, 50, 0.8)
+  }
+  .--Sites-appsButton:active {
+    width: calc((100% - 60px) / 3);
+    border-radius: 20px;
+    border: none;
+    background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
+    transition: 0.8s;
+    box-shadow: 0px 0px 35px 0px rgb(33, 40, 50, 0)
+  }
+  .--appsButton-icon {
+    width: 120px;
+    height: 120px
+  }
+  .--appsButton-name {
+    font-family: 'GSansBold';
+    font-size: 30px;
+    color: #F5F5F5;
+    margin-top: 10px
+  }
+}

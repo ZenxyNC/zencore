@@ -1,0 +1,24 @@
+@font-face {
+  font-family: GSansBlack;
+  src: url('ProductSans-Black.ttf');
+}
+@font-face {
+  font-family: GSansBold;
+  src: url('ProductSans-Bold.ttf');
+}
+@font-face {
+  font-family: GSansMedium;
+  src: url('ProductSans-Medium.ttf');
+}
+@font-face {
+  font-family: GSansRegular;
+  src: url('ProductSans-Regular.ttf');
+}
+@font-face {
+  font-family: GSansLight;
+  src: url('ProductSans-Light.ttf');
+}
+@font-face {
+  font-family: GSansThin;
+  src: url('ProductSans-Thin.ttf');
+}
