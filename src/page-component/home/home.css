@@ -171,8 +171,9 @@ html {
 
 #div-mainCategory {
   width: 100%;
-  height: 800px;
-  margin-top: 80px
+  height: 500px;
+  margin-top: 80px;
+  overflow-y: scroll;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -279,7 +280,8 @@ html {
     aspect-ratio: 1/1;
     right: 0px;
     position: absolute;
-    margin-top: unset
+    margin-top: unset;
+    height: unset;
   }
   
   #div-selector {

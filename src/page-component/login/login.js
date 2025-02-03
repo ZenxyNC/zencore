@@ -64,7 +64,7 @@ export default function Login() {
   useEffect(() => {
     if(localStorage.getItem("zenapps-global-id") in _DATABASE) {
       setZenID(localStorage.getItem("zenapps-global-id") in _DATABASE);
-      var confirmRedirect = window.confirm("Do you wish to proceed redirect to Home?");
+      var confirmRedirect = window.confirm(`You're already logged in as ${ZenID}. Redirect to home?`);
       if(confirmRedirect) {
         LoginProcessor.autoLogin()
       }

@@ -28,6 +28,7 @@ export default function Sites() {
           <img className='--appsButton-icon' src={ZenCourse} alt='' />
           <div className='--appsButton-name'>ZenCourse</div>
         </button>
+        <div id='extender'></div>
       </div>
     </>
   ); 

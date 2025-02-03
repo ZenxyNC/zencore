@@ -7,6 +7,7 @@ import GitHub from './mainCategory/Github/GitHub';
 import Account from './mainCategory/Account/Account';
 import Settings from './mainCategory/Settings/Settings';
 import About from './mainCategory/About/About';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +15,7 @@ export default function Home() {
   const [mainCategory, setMCategory] = useState("Software(Sites)");
   const [selectedCategory, setSelectedCategory] = useState("Sites");
   const [userData, setUserData] = useState(null);
+  const navigate = useNavigate()
   
 
   useEffect(() => {
@@ -28,6 +30,8 @@ export default function Home() {
           license : verifyUserData("credentials", "license")
         })
       }
+    } else {
+      navigate("/zencore/login")
     }
   }, [])
 
@@ -105,29 +109,37 @@ export default function Home() {
 
   //style
   function updateSize() {
-    const divSelector = document.getElementById("div-selector");
-    const divProfile = document.getElementById("div-profile");
-    const divSoftware = document.getElementById("div-mainCategory");
-    const profileWidth = divProfile.offsetWidth + 20;
-    const mCategoryHeight = divSoftware.offsetHeight;
-    const heightOperator = mCategoryHeight - profileWidth - 0
+    try {
+      const divSelector = document.getElementById("div-selector");
+      const divProfile = document.getElementById("div-profile");
+      const divSoftware = document.getElementById("div-mainCategory");
+      const profileWidth = divProfile.offsetWidth + 20;
+      const mCategoryHeight = divSoftware.offsetHeight;
+      const heightOperator = mCategoryHeight - profileWidth - 0
 
-    if(window.innerWidth >= 1170 ) {
-      divSelector.style.height = `${heightOperator}px`;
-      divSelector.style.top = `${profileWidth}px`;
-    } else {
+      if(window.innerWidth >= 1170 ) {
+        divSelector.style.height = `${heightOperator}px`;
+        divSelector.style.top = `${profileWidth}px`;
+      } else {
 
+      }
+    } catch(err) {
+      console.error(err.message)
     }
 
 
     //phase 2
-    const divProfile_userInfo = document.getElementById("divProfile-userInfo");
-    const divProfile_image = document.getElementById("divProfile-image").offsetHeight + 20;
+    try{
+      const divProfile_userInfo = document.getElementById("divProfile-userInfo");
+      const divProfile_image = document.getElementById("divProfile-image").offsetHeight + 20;
 
-    if(window.innerWidth >= 1170) {
-      divProfile_userInfo.style.top = `${divProfile_image + 15}px`
-    } else {
-      divProfile_userInfo.style.top = `${divProfile_image}px`
+      if(window.innerWidth >= 1170) {
+        divProfile_userInfo.style.top = `${divProfile_image + 15}px`
+      } else {
+        divProfile_userInfo.style.top = `${divProfile_image}px`
+      }
+    } catch(err) {
+      console.error(err.message)
     }
   }
   
