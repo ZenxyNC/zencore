@@ -19,25 +19,29 @@ export default function Home() {
   
 
   useEffect(() => {
-    const getUID = JSON.parse(localStorage.getItem("zenapps-global-id"));
-    if(getUID.id) {
-      if(getUID.id in _DATABASE) {
-        if(getUID.password === _DATABASE[getUID.id].credentials.password_Hashed) {
-          setUserData({
-            user : getUID.id,
-            username : _DATABASE[getUID.id].personal.username,
-            phone : verifyUserData("credentials", "phone"),
-            email : verifyUserData("credentials", "email"),
-            license : verifyUserData("credentials", "license")
-          })
-        } else {
-          alert("Account information mismatch.")
+    try {
+      const getUID = JSON.parse(localStorage.getItem("zenapps-global-id"));
+      if(getUID.id) {
+        if(getUID.id in _DATABASE) {
+          if(getUID.password === _DATABASE[getUID.id].credentials.password_Hashed) {
+            setUserData({
+              user : getUID.id,
+              username : _DATABASE[getUID.id].personal.username,
+              phone : verifyUserData("credentials", "phone"),
+              email : verifyUserData("credentials", "email"),
+              license : verifyUserData("credentials", "license")
+            })
+          } else {
+            alert("Account information mismatch.")
+          }
+        }  else {
+          navigate("/zencore/login")
         }
-      }  else {
+      } else {
         navigate("/zencore/login")
       }
-    } else {
-      navigate("/zencore/login")
+    } catch(error) {
+      navigate('/zencore/login')
     }
   }, [])
 
