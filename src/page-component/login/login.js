@@ -4,6 +4,7 @@ import hideIcon from '../../resource/icon/mdi_hide.svg'
 import { useEffect, useRef, useState } from 'react'
 import { _DATABASE } from './loginAssets';
 import { useNavigate } from 'react-router-dom';
+import { _hash } from './loginhasher'
 
 
 export default function Login() {
@@ -43,7 +44,10 @@ export default function Login() {
     }
 
     saveInfo() {
-      localStorage.setItem("zenapps-global-id", this.#ZenID)
+      localStorage.setItem("zenapps-global-id", JSON.stringify({
+        id: this.#ZenID,
+        password_Hashed : Password
+      }))
       this.redirect("/zencore/home")
     }
 
@@ -52,7 +56,7 @@ export default function Login() {
     }
 
     autoLogin() {
-      if(localStorage.getItem("zenapps-global-id") in _DATABASE) {
+      if(JSON.parse(localStorage.getItem("zenapps-global-id")).id in _DATABASE) {
         this.redirect("/zencore/home")
       } else {
         console.error("Invalid ID : " + ZenID)
@@ -62,15 +66,24 @@ export default function Login() {
 
   //Check if user logged in already.
   useEffect(() => {
-    if(localStorage.getItem("zenapps-global-id") in _DATABASE) {
-      setZenID(localStorage.getItem("zenapps-global-id") in _DATABASE);
-      var confirmRedirect = window.confirm(`You're already logged in as ${ZenID}. Redirect to home?`);
-      if(confirmRedirect) {
-        LoginProcessor.autoLogin()
+    try {
+      var localID = JSON.parse(localStorage.getItem("zenapps-global-id"))
+      if(localID.id in _DATABASE) {
+        if(localID.password_Hashed === _DATABASE[localID.id].credentials.password) {
+          setZenID(localID.id);
+          setTimeout(() => {
+            var confirmRedirect = window.confirm(`You're already logged in as ${localID.id}. Redirect to home?`);
+            if(confirmRedirect) {
+              LoginProcessor.autoLogin()
+            }
+          }, 2000)
+        }
       }
+    } catch(err) {
+      
     }
   //eslint-disable-next-line
-  }, [])
+  }, [ZenID])
 
   const LoginProcessor = new _LoginProcessor(ZenID, Password);
 
@@ -88,6 +101,22 @@ export default function Login() {
       document.getElementById("input-ZenID").style.border = "1px solid #FF393D"
     }
   }
+
+  function hashPassword(password) {
+    let slicedPassword = password.split("");
+    console.log(slicedPassword)
+    
+    for(let i = 0; i < slicedPassword.length; i++) {
+      if(_hash[slicedPassword[i]]) {
+          slicedPassword[i] = _hash[slicedPassword[i]]
+      } else {
+
+      }
+
+    }
+
+    setPassword(slicedPassword.join(""))
+  } 
 
   function changePasswordType() {
     const buttonID = document.getElementById('input-Password-ChangeType')
@@ -120,7 +149,7 @@ export default function Login() {
           placeholder='Password' 
           id='input-Password' 
           autoComplete='off'
-          onInput={(e) => setPassword(e.target.value)}
+          onInput={(e) => hashPassword(e.target.value)}
           ></input>
 
           <button 

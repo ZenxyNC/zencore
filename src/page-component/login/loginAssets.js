@@ -1,7 +1,7 @@
 export const _DATABASE = {
   "Lucas Harel" : {
     credentials : {
-      password : "LucasDev2308",
+      password : "?_?$!.-,$;[==|_`~.+',(&^--;}(^!'|,<?(@`$,-!,[<~<][^^<|&;</)[@/<|+(:",
       phone : "+62 812 2577 7660",
       email : "timothynathanlucas@gmail.com",
       license : "Zen Developer"
@@ -22,7 +22,7 @@ export const _DATABASE = {
   },
   "Vutha" : {
     credentials : {
-      password : "Vutha1234",
+      password : "'%]/{-,$;[=~;<(}|?(:~_(;+',(&&{))!_<~<][^^<|&;%[=;^!)",
       phone : null,
       email : null,
       license: "Member"

@@ -13,7 +13,7 @@
 
 .--Sites-appsButton {
   width: calc((100% - 10px) / 2);
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
   transition: 0.8s;
@@ -22,7 +22,7 @@
 }
 .--Sites-appsButton:active {
   width: calc((100% - 10px) / 2);
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   background-image: linear-gradient(to bottom right, rgba(40, 58, 88), rgb(33, 40, 50) 75%);
   transition: 0.8s;

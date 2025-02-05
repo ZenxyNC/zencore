@@ -19,16 +19,20 @@ export default function Home() {
   
 
   useEffect(() => {
-    const getUID = localStorage.getItem("zenapps-global-id");
-    if(getUID) {
-      if(getUID in _DATABASE) {
-        setUserData({
-          user : getUID,
-          username : _DATABASE[getUID].personal.username,
-          phone : verifyUserData("credentials", "phone"),
-          email : verifyUserData("credentials", "email"),
-          license : verifyUserData("credentials", "license")
-        })
+    const getUID = JSON.parse(localStorage.getItem("zenapps-global-id"));
+    if(getUID.id) {
+      if(getUID.id in _DATABASE) {
+        if(getUID.password === _DATABASE[getUID.id].credentials.password_Hashed) {
+          setUserData({
+            user : getUID.id,
+            username : _DATABASE[getUID.id].personal.username,
+            phone : verifyUserData("credentials", "phone"),
+            email : verifyUserData("credentials", "email"),
+            license : verifyUserData("credentials", "license")
+          })
+        } else {
+          alert("Account information mismatch.")
+        }
       }
     } else {
       navigate("/zencore/login")
@@ -36,7 +40,7 @@ export default function Home() {
   }, [])
 
   const verifyUserData = (type, item) => {
-    const getUID = localStorage.getItem("zenapps-global-id");
+    const getUID = JSON.parse(localStorage.getItem("zenapps-global-id")).id;
     if(type === "credentials") {
       if(_DATABASE[getUID].credentials[item] !== null) {
         return _DATABASE[getUID].credentials[item]

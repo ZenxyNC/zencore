@@ -5,8 +5,8 @@ html {
 ._container {
   width: unset;
   height: unset;
-  background-color: rgb(33, 40, 50, 0.6);
-  border-radius: 20px;
+  background-color: rgb(33, 40, 50, 0.5);
+  border-radius: 30px;
   backdrop-filter: blur(50px);
   position: absolute;
 }
@@ -229,7 +229,7 @@ html {
   ._container {
     width: unset;
     height: unset;
-    background-color: rgb(33, 40, 50, 0.6);
+    background-color: rgb(33, 40, 50, 0.5);
     border-radius: 30px;
     backdrop-filter: blur(50px);
     position: absolute;
