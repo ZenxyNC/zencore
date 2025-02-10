@@ -16,6 +16,11 @@ export default function Sites() {
     updateSize()
   }, 1200)
   window.addEventListener('load', updateSize)
+
+
+  function handleLocator(path) {
+    window.location.href = path
+  }
   return(
     <>
       <div id='--Sites-mainDiv'>
@@ -24,7 +29,7 @@ export default function Sites() {
           <div className='--appsButton-name'>ZenAI</div>
         </button>
         
-        <button className='--Sites-appsButton'>
+        <button className='--Sites-appsButton' onClick={() => handleLocator(`https://zenxync.github.io/zencourse/`)}>
           <img className='--appsButton-icon' src={ZenCourse} alt='' />
           <div className='--appsButton-name'>ZenCourse</div>
         </button>

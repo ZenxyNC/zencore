@@ -123,9 +123,11 @@ export default function Login() {
     if(passwordType === "password") {
       setPasswordType("text")
       buttonID.style.backgroundImage = `url(${showIcon})`;
+      document.getElementById("input-Password").focus()
     } else {
       setPasswordType("password")
       buttonID.style.backgroundImage = `url(${hideIcon})`;
+      document.getElementById("input-Password").focus()
     }
   }
 

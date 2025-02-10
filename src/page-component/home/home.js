@@ -15,6 +15,13 @@ export default function Home() {
   const [mainCategory, setMCategory] = useState("Software(Sites)");
   const [selectedCategory, setSelectedCategory] = useState("Sites");
   const [userData, setUserData] = useState(null);
+  const [popupAlert, setPopupAlert] = useState({
+    isShown: false,
+    title: "Title",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tortor purus, laoreet in purus nec, pretium interdum ipsum. Maecenas pretium auctor erat, non venenatis dolor. Etiam egestas eros enim, dapibus tempor ipsum ultricies non.",
+    status: null,
+    context: ""
+  })
   const navigate = useNavigate()
   
 
@@ -43,6 +50,7 @@ export default function Home() {
     } catch(error) {
       navigate('/zencore/login')
     }
+    //eslint-disable-next-line
   }, [])
 
   const verifyUserData = (type, item) => {
@@ -72,42 +80,42 @@ export default function Home() {
       setMCategory("Software(Sites)")
       setSelectedCategory("Sites")
       if(window.innerWidth < 1170) {
-        handlePopup("close")
+        handlePopupSelector("close")
       }
     } else if (changeTo === "GitHub") {
       setMCategory("Software(GitHub)")
       setSelectedCategory("GitHub")
       if(window.innerWidth < 1170) {
-        handlePopup("close")
+        handlePopupSelector("close")
       }
     } else if (changeTo === "Account") {
       setMCategory("Account")
       setSelectedCategory("Account")
       if(window.innerWidth < 1170) {
-        handlePopup("close")
+        handlePopupSelector("close")
       }
     }  else if (changeTo === "Settings") {
       setMCategory("Settings")
       setSelectedCategory("Settings")
       if(window.innerWidth < 1170) {
-        handlePopup("close")
+        handlePopupSelector("close")
       }
     }  else if (changeTo === "About") {
       setMCategory("About")
       setSelectedCategory("About");
       if(window.innerWidth < 1170) {
-        handlePopup("close")
+        handlePopupSelector("close")
       }
     }
 
     else if(changeTo === "--mobile") {
-      handlePopup("open")
+      handlePopupSelector("open")
     }
 
     
   }
 
-  const handlePopup = (action) => {
+  const handlePopupSelector = (action) => {
     if(action === "open") {
       document.getElementById("popup-selector").style.display = "block"
     } else if(action === "close") {
@@ -115,7 +123,41 @@ export default function Home() {
     }
   }
 
-
+  const handlePopupAlert = (action, Title = "", Content = "", Context = "") => {
+    if (action === "open") {
+      setPopupAlert({
+        isShown: true,
+        title: Title,
+        content: Content,
+        status: null,
+        context: Context
+      });
+    } else if (action === "close") {
+      setPopupAlert({
+        isShown: false,
+        title: Title,
+        content: Content,
+        status: null,
+        context: Context
+      });
+    } else if (action === "OK") {
+      setPopupAlert({
+        isShown: false,
+        title: Title,
+        content: Content,
+        status: true,
+        context: Context
+      });
+    } else if (action === "CANCEL") {
+      setPopupAlert({
+        isShown: false,
+        title: Title,
+        content: Content,
+        status: false,
+        context: Context
+      });
+    }
+  }
 
   //style
   function updateSize() {
@@ -158,33 +200,54 @@ export default function Home() {
   window.addEventListener("resize", updateSize);
   return(
     <>
-      <div id='popup-selector'>
-        <div className='filter-blur-layer' onClick={() => handlePopup("close")}></div>
+      {popupAlert && 
+      <div className={`popup-alert ${popupAlert.isShown ? "show" : "hide"}`}>
+        <div className='filter-blur-layer' onClick={() => handlePopupAlert("close")}></div>
         <div id='popup-alert-box'>
-        <div className='selector-button' onClick={() => handleCategoryChanges("Sites")}>
-          <div className='selectorButton-title'>Software(Sites)</div>
-            {selectedCategory && 
-              <div className={`selectorButton-arrow ${selectedCategory === "Sites" ? "show" : "hide"}`}></div>
-            }
+          <div id='popupAlert-title'>
+            {popupAlert.title}
           </div>
+          <div id='popupAlert-content'>
+            {popupAlert.content}
+          </div>
+          <button id='popupAlert-prop-OK' onClick={() => handlePopupAlert("OK")}>Ok</button>
+          <button id='popupAlert-prop-CANCEL' onClick={() => handlePopupAlert("CANCEL")}>Cancel</button>
+        </div>
+      </div>
+    }
+
+
+      <div id='popup-selector'>
+        <div className='filter-blur-layer' onClick={() => handlePopupSelector("close")}></div>
+        <div id='popup-selector-box'>
+          <div className='selector-button' onClick={() => handleCategoryChanges("Sites")}>
+            <div className='selectorButton-title'>Software(Sites)</div>
+              {selectedCategory && 
+              <div className={`selectorButton-arrow ${selectedCategory === "Sites" ? "show" : "hide"}`}></div>
+              }
+          </div>
+
           <div className='selector-button' onClick={() => handleCategoryChanges("GitHub")}>
             <div className='selectorButton-title'>Software(GitHub)</div>
-            {selectedCategory && 
+              {selectedCategory && 
               <div className={`selectorButton-arrow ${selectedCategory === "GitHub" ? "show" : "hide"}`}></div>
             }
           </div>
+          
           <div className='selector-button' onClick={() => handleCategoryChanges("Account")}>
             <div className='selectorButton-title'>Account</div>
             {selectedCategory && 
               <div className={`selectorButton-arrow ${selectedCategory === "Account" ? "show" : "hide"}`}></div>
             }
           </div>
+          
           <div className='selector-button' onClick={() => handleCategoryChanges("Settings")}>
             <div className='selectorButton-title'>Settings</div>
             {selectedCategory && 
               <div className={`selectorButton-arrow ${selectedCategory === "Settings" ? "show" : "hide"}`}></div>
             }
           </div>
+          
           <div className='selector-button' onClick={() => handleCategoryChanges("About")}>
             <div className='selectorButton-title'>About</div>
             {selectedCategory && 
@@ -193,6 +256,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+
       <div id='home-main-div'>
         <div id='div-profile' className='_container'>
           <div id='divProfile-image'></div>
@@ -214,20 +279,22 @@ export default function Home() {
           </div>
         </div>
 
+
         <div id='div-mainCategory' className='_container'>
           <div id='div-mainCategory-title'> {mainCategory} </div>
           {selectedCategory === "Sites" && <Sites />}
           {selectedCategory === "GitHub" && <GitHub />}
-          {selectedCategory === "Account" && <Account />}
+          {selectedCategory === "Account" && <Account alertFunction={handlePopupAlert} popupAlert={popupAlert} />}
           {selectedCategory === "Settings" && <Settings />}
           {selectedCategory === "About" && <About />}
         </div>
+
 
         <div id='div-selector' className='_container'>
           <div id='selector-desktop-view'>
             <div className='selector-button' onClick={() => handleCategoryChanges("Sites")}>
               <div className='selectorButton-title'>Software(Sites)</div>
-              {selectedCategory && 
+              {selectedCategory &&
                 <div className={`selectorButton-arrow ${selectedCategory === "Sites" ? "show" : "hide"}`}></div>
               }
             </div>

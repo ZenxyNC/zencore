@@ -40,5 +40,26 @@ export const _DATABASE = {
         }
       }
     }
-  }
+  },
+  "Liam Jude" : {
+    credentials : {
+      password : "?_?$!.!+',(&+/$&#@*_{!@<~<][^</)[@<~<][^?*#%;#{,>,'#@*_{!@:?,=*(~;<(}|??(@`$:?,=*(!",
+      phone : "+1 (555) 987-6543",
+      email : "liam.jude.carter1234@example.com",
+      license: "Member"
+    },
+    personal : {
+      username : "Liam Jude",
+      gender : "male",
+      birth: {
+        age : 14,
+        citizenship : "America",
+        birthday : {
+          day: 14,
+          month: 6,
+          year: 2002
+        }
+      }
+    }
+  },
 }
