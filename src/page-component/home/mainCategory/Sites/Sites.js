@@ -1,6 +1,7 @@
 import './Sites.css'
 import ZenAI from '../../../../resource/Appicon/ZenAI.svg'
 import ZenCourse from '../../../../resource/Appicon/ZenCourse.png'
+import ZenGuard from '../../../../resource/Appicon/ZenGuard.png'
 
 
 export default function Sites() {
@@ -12,10 +13,9 @@ export default function Sites() {
       button.style.height = button.offsetWidth + 'px'
     })
   }
-  setInterval(() => {
-    updateSize()
-  }, 1200)
+
   window.addEventListener('load', updateSize)
+  window.addEventListener('resize', updateSize)
 
 
   function handleLocator(path) {
@@ -28,10 +28,15 @@ export default function Sites() {
           <img className='--appsButton-icon' src={ZenAI} alt='' />
           <div className='--appsButton-name'>ZenAI</div>
         </button>
-        
+                 
         <button className='--Sites-appsButton' onClick={() => handleLocator(`https://zenxync.github.io/zencourse/`)}>
           <img className='--appsButton-icon' src={ZenCourse} alt='' />
           <div className='--appsButton-name'>ZenCourse</div>
+        </button>
+
+        <button className='--Sites-appsButton' onClick={() => handleLocator(`https://zenxync.github.io/zenguard`)}>
+          <img className='--appsButton-icon' src={ZenGuard} alt='' />
+          <div className='--appsButton-name'>ZenGuard</div>
         </button>
         <div id='extender'></div>
       </div>

@@ -4,7 +4,7 @@ export const _DATABASE = {
       password : "?_?$!.-,$;[==|_`~.+',(&^--;}(^!'|,<?(@`$,-!,[<~<][^^<|&;</)[@/<|+(:",
       phone : "+62 812 2577 7660",
       email : "timothynathanlucas@gmail.com",
-      license : "Zen Developer"
+      license : "Developer"
     },
     personal : {
       username : "Lucas",

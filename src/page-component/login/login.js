@@ -104,7 +104,6 @@ export default function Login() {
 
   function hashPassword(password) {
     let slicedPassword = password.split("");
-    console.log(slicedPassword)
     
     for(let i = 0; i < slicedPassword.length; i++) {
       if(_hash[slicedPassword[i]]) {

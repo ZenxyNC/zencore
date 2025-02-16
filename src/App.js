@@ -8,11 +8,12 @@ export default function App() {
 
   return (
     <>
-    <Router basename="/zencore/">
+    <Router basename="/zencore">
       <Routes>
         <Route path = "/*" element = {<Home />} />
         <Route path = "/zencore/home" element = {<Home />} />
         <Route path = "/zencore/login" element = {<Login />} />
+        <Route path = "/zencore/admin" element = {<Login />} />
       </Routes>
     </Router>
     </>

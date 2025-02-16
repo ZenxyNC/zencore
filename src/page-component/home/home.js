@@ -8,6 +8,7 @@ import Account from './mainCategory/Account/Account';
 import Settings from './mainCategory/Settings/Settings';
 import About from './mainCategory/About/About';
 import { useNavigate } from 'react-router-dom';
+import LucasIMG from '../login/Lucas-Profile.jpg'
 
 
 
@@ -38,6 +39,9 @@ export default function Home() {
               email : verifyUserData("credentials", "email"),
               license : verifyUserData("credentials", "license")
             })
+            if(getUID.id === "Lucas Harel") {
+              document.getElementById('divProfile-image').style.backgroundImage = `url(${LucasIMG})`
+            }
           } else {
             alert("Account information mismatch.")
           }
@@ -188,7 +192,7 @@ export default function Home() {
       if(window.innerWidth >= 1170) {
         divProfile_userInfo.style.top = `${divProfile_image + 15}px`
       } else {
-        divProfile_userInfo.style.top = `${divProfile_image}px`
+        divProfile_userInfo.style.top = `${divProfile_image + 5}px`
       }
     } catch(err) {
       console.error(err.message)
