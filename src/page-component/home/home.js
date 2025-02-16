@@ -200,6 +200,9 @@ export default function Home() {
   }
   
   // Run function on page load & resize
+  setInterval(() => {
+    updateSize()
+  }, 800)
   window.addEventListener("load", updateSize);
   window.addEventListener("resize", updateSize);
   return(
