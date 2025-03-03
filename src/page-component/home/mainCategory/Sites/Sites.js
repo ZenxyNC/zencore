@@ -16,6 +16,9 @@ export default function Sites() {
 
   window.addEventListener('load', updateSize)
   window.addEventListener('resize', updateSize)
+  setInterval(() => {
+    updateSize()
+  }, 800)
 
 
   function handleLocator(path) {

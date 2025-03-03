@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-content: flex-start;
   gap: 10px;
+  transition: 0.8s;
 }
 
 .--Sites-appsButton {
@@ -33,13 +34,15 @@
   max-width: 60px;
   max-height: 60px;
   width: 80%;
-  height: 80%
+  height: 80%;
+  transition: 0.8s;
 }
 .--appsButton-name {
   font-family: 'GSansBold';
   font-size: 1.2em;
   color: #F5F5F5;
-  margin-top: 5px
+  transition: 0.8s;
+  margin-top: 5px;
 }
 #extender{
   width: 100%;

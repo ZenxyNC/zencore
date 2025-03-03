@@ -180,7 +180,8 @@ export default function Home() {
 
       }
     } catch(err) {
-      console.error(err.message)
+      console.warn(err.message)
+      clearInterval(perSecondSizeUpdater)
     }
 
 
@@ -200,7 +201,7 @@ export default function Home() {
   }
   
   // Run function on page load & resize
-  setInterval(() => {
+  const perSecondSizeUpdater = setInterval(() => {
     updateSize()
   }, 800)
   window.addEventListener("load", updateSize);
