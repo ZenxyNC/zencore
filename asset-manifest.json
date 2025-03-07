@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zencore/static/css/main.58dbdfc5.css",
-    "main.js": "/zencore/static/js/main.2f25c17e.js",
+    "main.js": "/zencore/static/js/main.ab31a41b.js",
     "static/js/563.f374a9d3.chunk.js": "/zencore/static/js/563.f374a9d3.chunk.js",
     "static/media/ZenGuard.png": "/zencore/static/media/ZenGuard.5e29f74c8717febe90df.png",
     "static/media/ZenCourse.png": "/zencore/static/media/ZenCourse.7c5075c58c80571ceb7c.png",
@@ -24,11 +24,11 @@
     "static/media/mdi_logout.svg": "/zencore/static/media/mdi_logout.6443fd9c61c19ddf56991aef3dccfb78.svg",
     "static/media/crossmark.svg": "/zencore/static/media/crossmark.855b9aff75c5ca84450853e9b2fd0025.svg",
     "main.58dbdfc5.css.map": "/zencore/static/css/main.58dbdfc5.css.map",
-    "main.2f25c17e.js.map": "/zencore/static/js/main.2f25c17e.js.map",
+    "main.ab31a41b.js.map": "/zencore/static/js/main.ab31a41b.js.map",
     "563.f374a9d3.chunk.js.map": "/zencore/static/js/563.f374a9d3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58dbdfc5.css",
-    "static/js/main.2f25c17e.js"
+    "static/js/main.ab31a41b.js"
   ]
 }
