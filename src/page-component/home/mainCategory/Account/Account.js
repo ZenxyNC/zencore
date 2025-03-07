@@ -50,13 +50,13 @@ export default function Account() {
 
 
   function handleRedirect(path) {
-    if(path === "/zencore/login") {
+    if(path === "/login/") {
       const confirmredirect = window.confirm(`Log out from ${ZenID}?`);
       if(confirmredirect) {
         localStorage.removeItem("zenapps-global-id")
         navigate(path)
       }
-    } else if(path === "/zencore/modify-details") {
+    } else if(path === "/modify-details/") {
       navigate(path)
     }
   }
@@ -95,7 +95,7 @@ export default function Account() {
           <div className='--prop-content' style={{opacity: 0.5}}>
            Log out from {ZenID}. ZenCore<span style={{color: "#FF393D"}}> will not sync </span>to ZenApps.
           </div>
-          <button id='logout-mark' onClick={() => handleRedirect("/zencore/login")}>
+          <button id='logout-mark' onClick={() => handleRedirect("/login/")}>
             <img src={logoutmark} id='logout-icon'/>
           </button>
         </div>
@@ -109,7 +109,7 @@ export default function Account() {
             <br/><br/>
             Old info(s) <span style={{color: "#FF393D"}}> will not</span> be saved.
           </div>
-          <button id='modify-mark' onClick={() => handleRedirect("/zencore/modify-details")}>
+          <button id='modify-mark' onClick={() => handleRedirect("/modify-details/")}>
             Modify
             <img src={editmark} id='logout-icon'/>
           </button>  

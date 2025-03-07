@@ -27,7 +27,7 @@ export default function Sites() {
   return(
     <>
       <div id='--Sites-mainDiv'>
-        <button className='--Sites-appsButton'>
+        <button className='--Sites-appsButton' onClick={() => handleLocator(`https://zenxync.github.io/zenai/`)}>
           <img className='--appsButton-icon' src={ZenAI} alt='' />
           <div className='--appsButton-name'>ZenAI</div>
         </button>

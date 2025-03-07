@@ -46,13 +46,13 @@ export default function Home() {
             alert("Account information mismatch.")
           }
         }  else {
-          navigate("/zencore/login")
+          navigate("/login/")
         }
       } else {
-        navigate("/zencore/login")
+        navigate("/login/")
       }
     } catch(error) {
-      navigate('/zencore/login')
+      navigate('/login/')
     }
     //eslint-disable-next-line
   }, [])

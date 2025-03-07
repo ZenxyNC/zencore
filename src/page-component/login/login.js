@@ -48,7 +48,7 @@ export default function Login() {
         id: this.#ZenID,
         password_Hashed : Password
       }))
-      this.redirect("/zencore/home")
+      this.redirect("/home")
     }
 
     redirect(target) {
@@ -57,7 +57,7 @@ export default function Login() {
 
     autoLogin() {
       if(JSON.parse(localStorage.getItem("zenapps-global-id")).id in _DATABASE) {
-        this.redirect("/zencore/home")
+        this.redirect("/home")
       } else {
         console.error("Invalid ID : " + ZenID)
       }
