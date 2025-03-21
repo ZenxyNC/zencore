@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/zencore/static/css/main.58dbdfc5.css",
-    "main.js": "/zencore/static/js/main.ab31a41b.js",
+    "main.css": "/zencore/static/css/main.79c18028.css",
+    "main.js": "/zencore/static/js/main.12613a30.js",
     "static/js/563.f374a9d3.chunk.js": "/zencore/static/js/563.f374a9d3.chunk.js",
     "static/media/ZenGuard.png": "/zencore/static/media/ZenGuard.5e29f74c8717febe90df.png",
     "static/media/ZenCourse.png": "/zencore/static/media/ZenCourse.7c5075c58c80571ceb7c.png",
@@ -12,6 +12,8 @@
     "static/media/ProductSans-Bold.ttf": "/zencore/static/media/ProductSans-Bold.153c4f86d79ce54c810c.ttf",
     "static/media/ProductSans-Black.ttf": "/zencore/static/media/ProductSans-Black.99679fcb879a842df8c5.ttf",
     "static/media/Lucas-Profile.jpg": "/zencore/static/media/Lucas-Profile.da920606511ad30bd857.jpg",
+    "static/media/gh-cmd-gen.svg": "/zencore/static/media/gh-cmd-gen.2aefedebd6bfda12738602901717fb57.svg",
+    "static/media/connect.png": "/zencore/static/media/connect.886e0b443568ce80ddcc.png",
     "static/media/wallpaper_dark 1.svg": "/zencore/static/media/wallpaper_dark 1.7520cc85540e952b1548.svg",
     "static/media/ZenCore.svg": "/zencore/static/media/ZenCore.d4eb17662ab5f83e795d.svg",
     "static/media/mdi_edit.svg": "/zencore/static/media/mdi_edit.ebd18a862620c45369292d7c4ec1aa08.svg",
@@ -23,12 +25,12 @@
     "static/media/checkmark.svg": "/zencore/static/media/checkmark.b8836678a4ca79e1f6b0ea71ebb6543c.svg",
     "static/media/mdi_logout.svg": "/zencore/static/media/mdi_logout.6443fd9c61c19ddf56991aef3dccfb78.svg",
     "static/media/crossmark.svg": "/zencore/static/media/crossmark.855b9aff75c5ca84450853e9b2fd0025.svg",
-    "main.58dbdfc5.css.map": "/zencore/static/css/main.58dbdfc5.css.map",
-    "main.ab31a41b.js.map": "/zencore/static/js/main.ab31a41b.js.map",
+    "main.79c18028.css.map": "/zencore/static/css/main.79c18028.css.map",
+    "main.12613a30.js.map": "/zencore/static/js/main.12613a30.js.map",
     "563.f374a9d3.chunk.js.map": "/zencore/static/js/563.f374a9d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.58dbdfc5.css",
-    "static/js/main.ab31a41b.js"
+    "static/css/main.79c18028.css",
+    "static/js/main.12613a30.js"
   ]
 }
