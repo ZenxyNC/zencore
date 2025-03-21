@@ -1,0 +1,156 @@
+#devmode-maindiv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(33, 40, 50, 0.3);
+}
+
+#devmode-box {
+  width: calc(100% - 20px);
+  height: 40vh;
+  max-width: 600px;
+  min-height: 300px;
+  max-height: 500px;
+  background-color: rgb(33, 40, 50, 0.6);
+  position: fixed;
+  z-index: 99999;
+  backdrop-filter: blur(60px);
+  border-radius: 30px;
+  box-shadow: 0px 0px 30px 2px rgb(33, 40, 50, 0.75);
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+#devmodeBox-contentArea {
+  width: calc(100% - 20px);
+  height: calc(100% - 90px);
+  border-radius: 20px;
+  position: relative;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+#devmode-img {
+  background-image: url('../../../../resource/icon/connect.png');
+  width: 30vw;
+  height: 30vw;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+}
+
+#devmode-img > label {
+  color: #F5F5F5;
+  font-family: 'GSansRegular';
+  width: max-content;
+  background-color: transparent;
+  font-size: 22px;
+  position: absolute;
+  left: 50%;
+  top: 140%;
+  transform: translate(-50%, -140%);
+}
+
+#devmode-connectButton {
+  width: calc(100% - 20px);
+  height: 60px;
+  background-color: #007AFF;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  color: #F5F5F5;
+  font-family: 'GSansBold';
+  font-size: 20px;
+  cursor: pointer;
+  border: none
+}
+
+#devmode-cPanel {
+  width: calc(100% - 20px);
+  height: 60px;
+  background-color: #31475e;
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  color: #F5F5F5;
+  font-family: 'GSansBold';
+  font-size: 20px;
+  cursor: pointer;
+  border: none
+}
+
+@media screen and (min-width: 1170px) {
+  #devmode-maindiv {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(33, 40, 50, 0.3);
+  }
+  
+  #devmode-box {
+    width: calc(100% - 20px);
+    height: 40vh;
+    max-width: 600px;
+    min-height: 450px;
+    max-height: unset;
+    background-color: rgb(33, 40, 50, 0.6);
+    position: fixed;
+    z-index: 99999;
+    backdrop-filter: blur(60px);
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px 2px rgb(33, 40, 50, 0.75);
+    top: 50%;
+    left: 50%;
+    bottom: unset;
+    transform: translate(-50%, -50%);
+  }
+  
+  #devmode-img {
+    background-image: url('../../../../resource/icon/connect.png');
+    width: 8vw;
+    height: 8vw;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+  }
+  
+  #devmode-img > label {
+    color: #F5F5F5;
+    font-family: 'GSansRegular';
+    width: max-content;
+    background-color: transparent;
+    font-size: 22px;
+    position: absolute;
+    left: 50%;
+    top: 130%;
+    transform: translate(-50%, -130%);
+  }
+  
+  #devmode-connectButton {
+    width: calc(100% - 20px);
+    height: 60px;
+    background-color: #007AFF;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    color: #F5F5F5;
+    font-family: 'GSansBold';
+    font-size: 20px;
+    cursor: pointer;
+    border: none
+  }
+}

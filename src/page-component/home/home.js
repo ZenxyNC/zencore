@@ -8,7 +8,8 @@ import Account from './mainCategory/Account/Account';
 import Settings from './mainCategory/Settings/Settings';
 import About from './mainCategory/About/About';
 import { useNavigate } from 'react-router-dom';
-import LucasIMG from '../login/Lucas-Profile.jpg'
+import LucasIMG from '../login/Lucas-Profile.jpg';
+import Devmode from './component/devmode/devmode';
 
 
 
@@ -337,7 +338,8 @@ export default function Home() {
           </button>
         </div>
       </div>
-      {/*<button onClick={() => localStorage.setItem("zenapps-global-id", "Lucas Harel")}>Summon data</button>*/}
+
+      {/*<Devmode />*/}
     </>
   );
 }
