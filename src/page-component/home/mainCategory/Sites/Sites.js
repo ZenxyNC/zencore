@@ -3,6 +3,7 @@ import ZenAI from '../../../../resource/Appicon/ZenAI.svg'
 import ZenCourse from '../../../../resource/Appicon/ZenCourse.png'
 import ZenGuard from '../../../../resource/Appicon/ZenGuard.png'
 import gh_cmd_gen from '../../../../resource/Appicon/gh-cmd-gen.svg'
+import ZenScreen from '../../../../resource/Appicon/ZenScreen.png'
 
 
 export default function Sites() {
@@ -46,6 +47,11 @@ export default function Sites() {
         <button className='--Sites-appsButton' onClick={() => handleLocator(`https://zenxync.github.io/gh-cmd-gen`)}>
           <img className='--appsButton-icon' src={gh_cmd_gen} alt='' />
           <div className='--appsButton-name'>GH Cmd Gen</div>
+        </button>
+
+        <button className='--Sites-appsButton' onClick={() => handleLocator(`https://zenxync.github.io/zenscreen`)}>
+          <img className='--appsButton-icon' src={ZenScreen} alt='' />
+          <div className='--appsButton-name'>ZenScreen</div>
         </button>
         <div id='extender'></div>
       </div>
