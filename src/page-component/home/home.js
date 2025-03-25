@@ -3,10 +3,8 @@ import '../../resource/font/importFont.css';
 import { useEffect, useState } from 'react';
 import { _DATABASE } from '../login/loginAssets';
 import Sites from './mainCategory/Sites/Sites';
-import GitHub from './mainCategory/Github/GitHub';
 import Account from './mainCategory/Account/Account';
 import Settings from './mainCategory/Settings/Settings';
-import About from './mainCategory/About/About';
 import { useNavigate } from 'react-router-dom';
 import LucasIMG from '../login/Lucas-Profile.jpg';
 import Devmode from './component/devmode/devmode';
@@ -87,12 +85,6 @@ export default function Home() {
       if(window.innerWidth < 1170) {
         handlePopupSelector("close")
       }
-    } else if (changeTo === "GitHub") {
-      setMCategory("Software(GitHub)")
-      setSelectedCategory("GitHub")
-      if(window.innerWidth < 1170) {
-        handlePopupSelector("close")
-      }
     } else if (changeTo === "Account") {
       setMCategory("Account")
       setSelectedCategory("Account")
@@ -102,12 +94,6 @@ export default function Home() {
     }  else if (changeTo === "Settings") {
       setMCategory("Settings")
       setSelectedCategory("Settings")
-      if(window.innerWidth < 1170) {
-        handlePopupSelector("close")
-      }
-    }  else if (changeTo === "About") {
-      setMCategory("About")
-      setSelectedCategory("About");
       if(window.innerWidth < 1170) {
         handlePopupSelector("close")
       }
@@ -225,7 +211,6 @@ export default function Home() {
       </div>
     }
 
-
       <div id='popup-selector'>
         <div className='filter-blur-layer' onClick={() => handlePopupSelector("close")}></div>
         <div id='popup-selector-box'>
@@ -234,13 +219,6 @@ export default function Home() {
               {selectedCategory && 
               <div className={`selectorButton-arrow ${selectedCategory === "Sites" ? "show" : "hide"}`}></div>
               }
-          </div>
-
-          <div className='selector-button' onClick={() => handleCategoryChanges("GitHub")}>
-            <div className='selectorButton-title'>Software(GitHub)</div>
-              {selectedCategory && 
-              <div className={`selectorButton-arrow ${selectedCategory === "GitHub" ? "show" : "hide"}`}></div>
-            }
           </div>
           
           <div className='selector-button' onClick={() => handleCategoryChanges("Account")}>
@@ -254,13 +232,6 @@ export default function Home() {
             <div className='selectorButton-title'>Settings</div>
             {selectedCategory && 
               <div className={`selectorButton-arrow ${selectedCategory === "Settings" ? "show" : "hide"}`}></div>
-            }
-          </div>
-          
-          <div className='selector-button' onClick={() => handleCategoryChanges("About")}>
-            <div className='selectorButton-title'>About</div>
-            {selectedCategory && 
-              <div className={`selectorButton-arrow ${selectedCategory === "About" ? "show" : "hide"}`}></div>
             }
           </div>
         </div>
@@ -292,10 +263,8 @@ export default function Home() {
         <div id='div-mainCategory' className='_container'>
           <div id='div-mainCategory-title'> {mainCategory} </div>
           {selectedCategory === "Sites" && <Sites />}
-          {selectedCategory === "GitHub" && <GitHub />}
           {selectedCategory === "Account" && <Account alertFunction={handlePopupAlert} popupAlert={popupAlert} />}
           {selectedCategory === "Settings" && <Settings />}
-          {selectedCategory === "About" && <About />}
         </div>
 
 
@@ -305,12 +274,6 @@ export default function Home() {
               <div className='selectorButton-title'>Software(Sites)</div>
               {selectedCategory &&
                 <div className={`selectorButton-arrow ${selectedCategory === "Sites" ? "show" : "hide"}`}></div>
-              }
-            </div>
-            <div className='selector-button' onClick={() => handleCategoryChanges("GitHub")}>
-              <div className='selectorButton-title'>Software(GitHub)</div>
-              {selectedCategory && 
-                <div className={`selectorButton-arrow ${selectedCategory === "GitHub" ? "show" : "hide"}`}></div>
               }
             </div>
             <div className='selector-button' onClick={() => handleCategoryChanges("Account")}>
@@ -323,12 +286,6 @@ export default function Home() {
               <div className='selectorButton-title'>Settings</div>
               {selectedCategory && 
                 <div className={`selectorButton-arrow ${selectedCategory === "Settings" ? "show" : "hide"}`}></div>
-              }
-            </div>
-            <div className='selector-button' onClick={() => handleCategoryChanges("About")}>
-              <div className='selectorButton-title'>About</div>
-              {selectedCategory && 
-                <div className={`selectorButton-arrow ${selectedCategory === "About" ? "show" : "hide"}`}></div>
               }
             </div>
           </div>

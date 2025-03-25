@@ -73,6 +73,8 @@ export default function Account() {
             ZenAI<br/>
             ZenCourse<br/>
             ZenScreen<br/>
+            ZenGuard<br/>
+            ZenEngine<br/>
           </div>
         </div>
 
