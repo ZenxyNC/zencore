@@ -1,0 +1,84 @@
+
+
+#logout-body {
+  width: 100%;
+  aspect-ratio: 2/1;
+
+  margin-top: 20px;
+
+  border-radius: 15px;
+  user-select: none;
+
+  transition: 0.45s;
+
+  outline: 2px solid #FF393D;
+
+  cursor: pointer
+} 
+
+#logout-body > #logout-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #FF393D;
+  font-family: _bold;
+
+  position: relative;
+  top: 50%;
+  margin-top: -5px;
+  transform: translateY(-50%);
+
+  background-color: transparent;
+
+} 
+
+#logout-title > #logout-user {
+  font-size: 0.7rem;
+  text-align: center;
+  color: rgb(245, 245, 245, 0.4);
+  font-family: _bold;
+
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1020px){
+  #logout-body {
+    width: 250px;
+    aspect-ratio: 1/1;
+
+    border-radius: 30px;
+    user-select: none;
+
+    transition: 0.45s;
+
+    position: absolute;
+    margin: unset;
+    left: 50px;
+    margin-top: 50px;
+
+    outline: 3px solid #FF393D;
+  } 
+
+  #logout-body > #logout-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #FF393D;
+    font-family: _bold;
+
+    position: relative;
+    top: 50%;
+    margin-top: 0px;
+    transform: translateY(-50%);
+
+    background-color: transparent;
+
+  } 
+
+  #logout-title > #logout-user {
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(245, 245, 245, 0.4);
+    font-family: _bold;
+
+    margin-top: 1rem;
+  }
+}

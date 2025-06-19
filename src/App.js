@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./components/login/login";
+import Home from "./components/home/home";
 
-function App() {
+import './App.css';
+import './font-jakartaSans/importFont.css'
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router basename="/zencore">
+        <Routes>
+          <Route path="/zencore/home" element={<Home />} />
+          <Route path="/*" element={<Home />} />
+          <Route path="/zencore/login" element={<Login />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
-
-export default App;

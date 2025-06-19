@@ -1,0 +1,66 @@
+
+
+#userGreeting-body {
+  width: calc(100% - 30px);
+  aspect-ratio: 1.8/1;
+  min-height: 200px;
+  max-height: 270px;
+  
+  border-radius: 15px;
+
+  padding: 10px 15px 10px 15px;
+
+  position: relative;
+}
+
+#greetings {
+  color: #007AFF;
+  font-family: _bold;
+  font-size: 2rem
+}
+
+#userGreeting-time {
+  position: absolute;
+  color: #F5F5F5;
+  bottom: 15px
+} #userGreeting-time > #clock {
+  font-size: 2.7rem;
+  font-family: _bold;
+} #userGreeting-time > #date {
+  font-size: 1.1rem;
+  font-family: _semibold;
+  color: rgb(245, 245, 245, 0.4)
+}
+
+
+@media screen and (min-width: 1020px) {
+  #userGreeting-body {
+    width: calc(45% - 25px - 60px);
+    height: 210px;
+    
+    border-radius: 30px;
+
+    padding: 15px 30px 15px 30px;
+
+    position: relative;
+  }
+
+  #greetings {
+    color: #007AFF;
+    font-family: _bold;
+    font-size: 2.5rem
+  }
+
+  #userGreeting-time {
+    position: absolute;
+    color: #F5F5F5;
+    bottom: 20px
+  } #userGreeting-time > #clock {
+    font-size: 3.2rem;
+    font-family: _bold;
+  } #userGreeting-time > #date {
+    font-size: 1.3rem;
+    font-family: _semibold;
+    color: rgb(245, 245, 245, 0.4)
+  }
+}

@@ -1,0 +1,33 @@
+
+
+#recentvisit-body{
+  width: calc(100% - 30px);
+  aspect-ratio: 0.2/1;
+  min-height: 300px;
+  max-height: 600px;
+  
+  border-radius: 15px;
+
+  padding: 10px 15px 10px 15px;
+
+  position: relative;
+  top: 20px;
+}
+
+
+@media screen and (min-width: 1020px) {
+  #recentvisit-body {
+    width: calc(55% - 25px - 60px);
+    height: calc(100% - 50px - 30px);
+    min-height: 500px;
+    max-height: unset;
+    
+    border-radius: 30px;
+
+    padding: 15px 30px 15px 30px;
+
+    position: absolute;
+    top: 0px;
+    right: 0px
+  }
+}

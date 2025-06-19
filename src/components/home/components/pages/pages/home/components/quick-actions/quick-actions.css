@@ -1,0 +1,35 @@
+
+
+#quickactions-body{
+  width: calc(100% - 30px);
+  aspect-ratio: 1/1;
+  
+  border-radius: 15px;
+
+  padding: 10px 15px 10px 15px;
+
+  position: relative;
+  top: 20px;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 1020px) {
+  #quickactions-body {
+    width: calc(45% - 25px - 60px);
+    height: calc(100% - 50px - 30px - 240px - 50px);
+    aspect-ratio: unset;
+    min-height: 300px;
+    max-height: unset;
+    
+    border-radius: 30px;
+
+    padding: 15px 30px 15px 30px;
+
+    position: absolute;
+    top: unset;
+    bottom: 30px;
+    right: unset;
+    left: 0px
+  }
+}

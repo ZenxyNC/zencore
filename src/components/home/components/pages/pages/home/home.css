@@ -1,0 +1,31 @@
+#homeactivity-maindiv {
+  width: 100%;
+  height: calc(100% - 2.2rem - 13px - 30px);
+
+  background-color: transparent;
+
+  overflow-x: visible;
+  overflow-y: scroll;
+
+  position: relative;
+}
+
+#homeactivity-maindiv::-webkit-scrollbar {
+  display: none;
+}
+
+#homeactivity-bottomextender {
+  height: 60px
+}
+
+@media screen and (min-width: 1020px) {
+  #homeactivity-maindiv {
+    width: 100%;
+    height: calc(100% - 2.5rem - 50px);
+
+    background-color: transparent;
+  }
+  #homeactivity-bottomextender {
+    height: 50px
+  }
+}

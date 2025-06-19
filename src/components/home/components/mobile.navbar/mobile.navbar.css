@@ -1,0 +1,61 @@
+
+#navbar-maindiv {
+  width: 100%;
+  height: 60px;
+
+  background-color: rgb(23, 28, 35, 0.7);
+
+  backdrop-filter: blur(25px);
+
+  position: fixed;
+
+  user-select: none;
+}
+
+#navbar-zencoreIcon {
+  width: 50px;
+  height: 50px;
+
+  background-image: url('../../../../resources/ZenCore-nobg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  left: 10px;
+  top: 5px;
+
+  position: absolute;
+}
+
+#navbar-menu {
+  width: 35px;
+  height: 35px;
+
+  background-image: url('../../../../resources/dots-menu.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  position: absolute;
+}
+
+#navbar-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(10px + 50px + 10px);
+
+  color: #F5F5F5;
+  font-family: _extrabold;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 1020px) {
+  #navbar-maindiv {
+    display: none;
+  }
+}

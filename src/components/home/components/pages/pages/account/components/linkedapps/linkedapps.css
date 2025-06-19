@@ -1,0 +1,70 @@
+
+
+#linkedApps-body {
+  width: calc(100% - 40px);
+  aspect-ratio: 1.2/1;
+
+  border-radius: 15px;
+
+  padding: 10px 20px 10px 20px;
+}
+
+#linkedApps-appList {
+  color: rgb(245, 245, 245, 0.4);
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 200px; /* Adjust this height to control when wrapping occurs */
+  gap: 5px;
+  background-color: transparent;
+
+  height: calc(100% - 60px)
+} #linkedApps-appList li {
+  color: rgb(245, 245, 245, 0.4);
+  font-size: 1rem;
+  margin-right: 1.3rem;
+  padding: 2px 0;
+  white-space: nowrap;
+
+  font-family: _semibold;
+}
+
+
+
+@media screen and (min-width: 1020px) {
+  #linkedApps-body {
+    width: calc(100% - 60px - 250px - 50px) /*Real width - padding - autologin box - margin*/;
+    aspect-ratio: unset;
+    height: calc(250px - 30px);
+
+    border-radius: 30px;
+
+    padding: 15px 30px 15px 30px;
+  }
+
+  #linkedApps-appList {
+    color: rgb(245, 245, 245, 0.4);
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 200px; /* Adjust this height to control when wrapping occurs */
+    gap: 5px;
+    background-color: transparent;
+
+    height: calc(100% - 80px)
+  } #linkedApps-appList li {
+    color: rgb(245, 245, 245, 0.4);
+    font-size: 1.2rem;
+    margin-right: 4rem;
+    padding: 2px 0;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,88 @@
+
+
+#editDetails-body{
+  width: calc(100% - 40px);
+  aspect-ratio: 1.2/1;
+
+  border-radius: 15px;
+
+  padding: 10px 20px 10px 20px;
+
+  margin-top: 30px;
+
+  position: relative;
+}
+
+#editDetails-captions {
+  color: rgb(245, 245, 245, 0.4);
+  margin-top: 15px;
+
+  font-family: _semibold;
+  font-size: 0.9rem;
+}
+
+#editDetails-button {
+  width: 40%;
+  aspect-ratio: 2.7/1;
+  max-height: 50px;
+
+  border-radius: 100px;
+  border: none; 
+
+  font-family: _bold;
+  color: #F5F5F5;
+  font-size: 100%;
+
+  background-color: rgb(245, 245, 245, 0.1);
+
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1020px) {
+  #editDetails-body {
+    width: calc(100% - 60px - 250px - 50px) /*Real width - padding - autologin box - margin*/;
+    aspect-ratio: unset;
+    height: calc(250px - 30px);
+
+    border-radius: 30px;
+
+    padding: 15px 30px 15px 30px;
+
+    margin-top: 50px;
+    position: relative;
+    left: 300px;
+  }
+  #editDetails-captions {
+    color: rgb(245, 245, 245, 0.4);
+    margin-top: 15px;
+
+    font-family: _semibold;
+    font-size: 1.2rem;
+  }
+
+  #editDetails-button {
+    width: 20%;
+    aspect-ratio: 2.7/1;
+    max-height: 50px;
+
+    border-radius: 100px;
+    border: none; 
+
+    font-family: _bold;
+    color: #F5F5F5;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+
+    background-color: rgb(245, 245, 245, 0.1);
+
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    cursor: pointer;
+  }
+}

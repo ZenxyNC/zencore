@@ -1,0 +1,24 @@
+@font-face {
+  font-family: _light;
+  src: url('./PlusJakartaSans-Light.ttf');
+}
+@font-face {
+  font-family: _regular;
+  src: url('./PlusJakartaSans-Regular.ttf');
+}
+@font-face {
+  font-family: _medium;
+  src: url('./PlusJakartaSans-Medium.ttf');
+}
+@font-face {
+  font-family: _semibold;
+  src: url('./PlusJakartaSans-SemiBold.ttf');
+}
+@font-face {
+  font-family: _bold;
+  src: url('./PlusJakartaSans-Bold.ttf');
+}
+@font-face {
+  font-family: _extrabold;
+  src: url('./PlusJakartaSans-ExtraBold.ttf');
+}

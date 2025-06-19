@@ -1,0 +1,48 @@
+
+#home-maindiv {
+  width: 100svw;
+  height: 100svh;
+
+  background-color: transparent;
+
+  position: relative;
+  top: 0px;
+  left: 0px;
+
+  transition: 0.45s;
+}
+
+#animated-background {
+  width: 100dvw;
+  height: 100dvh;
+
+  position: fixed;
+  z-index: -9999;
+  top: 0px;
+  left: 0px;
+
+  opacity: 0;
+
+  min-width: 1000px;
+
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#animated-background.active {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1020px) {
+  #home-maindiv {
+    width: calc(100svw - 200px);
+    max-width: 1500px;
+    height: calc(100svh - 100px);
+
+    background-color: transparent;
+
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
