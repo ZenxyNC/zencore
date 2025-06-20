@@ -5,8 +5,8 @@ export default function Logout({ username, confirm, setConfirm }) {
   var navigate = useNavigate();
 
   function handleLogout() {
-    localStorage.setItem('zenapps-global-id', JSON.stringify({id:'', password_hashed: ''}))
-    navigate('/zencore/login')
+    localStorage.setItem('zencore-info', JSON.stringify({isLoggedIn:false, isAutoLogin: false}))
+    navigate('/login')
   }
 
   return(
@@ -20,7 +20,7 @@ export default function Logout({ username, confirm, setConfirm }) {
           setConfirm({
             isOpened : true,
             title : "Logging out",
-            message : `You will be logged out from ${username}. Auto-login will be off, account info and settings will be removed from this device. Continue?`,
+            message : `You will be logged out from ${username}. App settings will be removed and ZenApps Auto-Login will be turned off. Continue?`,
             action: () => handleLogout()
           })
         }}

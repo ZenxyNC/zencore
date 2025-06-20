@@ -53,7 +53,7 @@ export default function Login() {
         duration: 5000
       });
       setTimeout(() => {
-        navigate('/zencore/home')
+        navigate('/home')
       }, 1000);
     } else {
       setSnackbar({

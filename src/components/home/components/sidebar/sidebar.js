@@ -48,7 +48,7 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
       const defineFirstLetter = fname[0] + lname[0];
       return defineFirstLetter
     } catch (err) {
-      navigate('/zencore/login')
+      navigate('/login')
     }
   }
 

@@ -31,7 +31,7 @@ export default function Home() {
       }
     } catch (err) {
       //Redirect if user is not logged in.
-      navigate('/zencore/login')
+      navigate('/login')
     }
   //eslint-disable-next-line
   }, [])
