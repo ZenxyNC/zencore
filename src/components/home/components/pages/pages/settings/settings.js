@@ -49,6 +49,23 @@ export default function Settings({ userSettings, setUserSettings, confirm, setCo
             value={userSettings?.animatedBackground}
           />
         </div>
+
+        <div className='settings-option'>
+          <div className='settingsOption-label'>Open at start</div>
+          <select
+            id='settings-dropdown'
+            value={userSettings?.openAtStart}
+            onChange={(e) => {
+              setUserSettings(prevSettings => ({
+                ...prevSettings,
+                openAtStart: e.target.value
+              }));
+            }}
+          >
+            <option value="home">Home</option>
+            <option value="projects">Projects</option>
+          </select>
+        </div>
       </div>
     </>
   )

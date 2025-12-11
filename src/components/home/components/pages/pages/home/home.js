@@ -14,7 +14,6 @@ export default function Home() {
 
       <div id="homeactivity-maindiv">
         <UserGreeting />
-        <QuickActions />
         <RecentVisit />
         <div id='homeactivity-bottomextender'></div>
       </div>
