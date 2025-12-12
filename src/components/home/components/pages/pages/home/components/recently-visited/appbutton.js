@@ -1,5 +1,6 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import './recentlyvisited.css'
 
 export default function AppButton({img, appname, url, openIn, addVisit}) {
 
@@ -16,7 +17,7 @@ export default function AppButton({img, appname, url, openIn, addVisit}) {
   return(
     <>
       <div 
-        id="AppButton-body" 
+        id="AppButton-body_RecentVisit" 
         onClick={() => redirect()}
         role="button"
         tabIndex={0}
@@ -27,13 +28,13 @@ export default function AppButton({img, appname, url, openIn, addVisit}) {
         }}
         translate='no'
       >
-        <div id="AppButton-AppInfo">
+        <div id="AppButton-AppInfo_RecentVisit">
           <LazyLoadImage 
             src={img}
             effect='blur'
-            id='AppButton-image'
+            id='AppButton-image_RecentVisit'
           />
-          <div id="AppButton-name">{appname}</div>
+          <div id="AppButton-name_RecentVisit">{appname}</div>
         </div>
       </div>
     </>

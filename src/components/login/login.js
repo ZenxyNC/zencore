@@ -42,7 +42,8 @@ export default function Login() {
       const defaultSettings = {
         hideContact: false,
         animatedBackground: false,
-        openAtStart: 'home'
+        openAtStart: 'home',
+        openProjectIn: 'currenttab'
       }
       localStorage.setItem('zencore-usersettings', JSON.stringify(defaultSettings))
 

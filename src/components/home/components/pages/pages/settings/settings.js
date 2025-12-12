@@ -66,6 +66,23 @@ export default function Settings({ userSettings, setUserSettings, confirm, setCo
             <option value="projects">Projects</option>
           </select>
         </div>
+
+        <div className='settings-option'>
+          <div className='settingsOption-label'>Open project in</div>
+          <select
+            id='settings-dropdown'
+            value={userSettings?.openProjectIn}
+            onChange={(e) => {
+              setUserSettings(prevSettings => ({
+                ...prevSettings,
+                openProjectIn: e.target.value
+              }));
+            }}
+          >
+            <option value="currenttab">Current tab</option>
+            <option value="newtab">New tab</option>
+          </select>
+        </div>
       </div>
     </>
   )

@@ -4,7 +4,7 @@ import UserGreeting from './components/userGreeting/userGreeting';
 import RecentVisit from './components/recently-visited/recentlyvisited';
 import QuickActions from './components/quick-actions/quick-actions';
 
-export default function Home() {
+export default function Home({ userSettings }) {
   
 
   return (
@@ -14,7 +14,7 @@ export default function Home() {
 
       <div id="homeactivity-maindiv">
         <UserGreeting />
-        <RecentVisit />
+        <RecentVisit userSettings={userSettings} />
         <div id='homeactivity-bottomextender'></div>
       </div>
     </>
