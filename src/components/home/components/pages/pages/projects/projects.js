@@ -7,8 +7,8 @@ import AppButton from './appbutton';
 import ZenAI from '../../../../../../resources/appicon/ZenAI.svg'
 import ZenCourse from '../../../../../../resources/appicon/ZenCourse.png'
 import ZenGuard from '../../../../../../resources/appicon/ZenGuard.png'
-import GHCMDGEN from '../../../../../../resources/appicon/gh-cmd-gen.png'
-import ZenScreen from '../../../../../../resources/appicon/ZenScreen.png'
+import GitHelper from '../../../../../../resources/appicon/githelper.svg'
+import ZenClock from '../../../../../../resources/appicon/zenclock.svg'
 import ZenEngine from '../../../../../../resources/appicon/ZenEngine.svg'
 
 import { useState, useEffect } from 'react';
@@ -31,15 +31,15 @@ export default function Projects({ userSettings }) {
       icon: ZenGuard,
       url: 'https://zenxync.github.io/zenguard/',
     },
-    'GH Cmd': {
-      name: 'GH Cmd',
-      icon: GHCMDGEN,
-      url: 'https://zenxync.github.io/gh-cmd-gen/',
+    'GitHelper': {
+      name: 'GitHelper',
+      icon: GitHelper,
+      url: 'https://zenxync.github.io/githelper/',
     },
-    'ZenScreen': {
-      name: 'ZenScreen',
-      icon: ZenScreen,
-      url: 'https://zenxync.github.io/zenscreen/',
+    'ZenClock': {
+      name: 'ZenClock',
+      icon: ZenClock,
+      url: 'https://zenxync.github.io/zenclock/',
     },
     'ZenEngine': {
       name: 'ZenEngine',
