@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/zencore/static/css/main.f2c5e04d.css",
-    "main.js": "/zencore/static/js/main.13f80f38.js",
+    "main.css": "/zencore/static/css/main.4f2cf19c.css",
+    "main.js": "/zencore/static/js/main.0d6483dd.js",
     "static/js/453.571a097c.chunk.js": "/zencore/static/js/453.571a097c.chunk.js",
     "static/media/ZenGuard.png": "/zencore/static/media/ZenGuard.5e29f74c8717febe90df.png",
-    "static/media/ZenCourse.png": "/zencore/static/media/ZenCourse.7c5075c58c80571ceb7c.png",
     "static/media/PlusJakartaSans-SemiBold.ttf": "/zencore/static/media/PlusJakartaSans-SemiBold.cf92107f36f071f6384c.ttf",
     "static/media/PlusJakartaSans-Medium.ttf": "/zencore/static/media/PlusJakartaSans-Medium.f78ffc04acb877ce387e.ttf",
     "static/media/PlusJakartaSans-Light.ttf": "/zencore/static/media/PlusJakartaSans-Light.6c8e1d7ccc92d1bf041b.ttf",
@@ -13,18 +12,14 @@
     "static/media/PlusJakartaSans-Regular.ttf": "/zencore/static/media/PlusJakartaSans-Regular.8b8f90ab0e945b1e795a.ttf",
     "static/media/wallpaper_dark 1.svg": "/zencore/static/media/wallpaper_dark 1.7520cc85540e952b1548.7520cc85540e952b1548.svg",
     "static/media/ZenCore-nobg.svg": "/zencore/static/media/ZenCore-nobg.f7ba94cf71ec4cf4fb0b.svg",
-    "static/media/ZenEngine.svg": "/zencore/static/media/ZenEngine.d5c7395d37e5e4c9660d0468f1497500.svg",
-    "static/media/zenclock.svg": "/zencore/static/media/zenclock.de51474447e96821aaa0a3cf45920a50.svg",
-    "static/media/githelper.svg": "/zencore/static/media/githelper.679df5e3bd80977baa8e3b3b09c74afc.svg",
     "static/media/dots-menu.svg": "/zencore/static/media/dots-menu.9adb527ff3011e6f1515.svg",
-    "static/media/ZenAI.svg": "/zencore/static/media/ZenAI.c0bce36464afe8a7be195b133a2fad73.svg",
     "index.html": "/zencore/index.html",
-    "main.f2c5e04d.css.map": "/zencore/static/css/main.f2c5e04d.css.map",
-    "main.13f80f38.js.map": "/zencore/static/js/main.13f80f38.js.map",
+    "main.4f2cf19c.css.map": "/zencore/static/css/main.4f2cf19c.css.map",
+    "main.0d6483dd.js.map": "/zencore/static/js/main.0d6483dd.js.map",
     "453.571a097c.chunk.js.map": "/zencore/static/js/453.571a097c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2c5e04d.css",
-    "static/js/main.13f80f38.js"
+    "static/css/main.4f2cf19c.css",
+    "static/js/main.0d6483dd.js"
   ]
 }
