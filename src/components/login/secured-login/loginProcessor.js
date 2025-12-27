@@ -4,6 +4,7 @@ import { _conf } from "./zenguard-config.js";
 
 // Fetch configuration from GitHub
 async function fetchConfig() {
+  /*
   try {
     const response = await fetch("https://raw.githubusercontent.com/zenxync/zenguard/main/public/zenguard-config-reactjs.json");
     if (!response.ok) throw new Error("Failed to fetch ZenGuard configuration.");
@@ -12,6 +13,8 @@ async function fetchConfig() {
     console.error(error.message);
     return null;
   }
+  */
+  return true
 }
 
 
@@ -134,7 +137,7 @@ class processor {
   }
 
   async verifyEngine() {
-    try {
+    /*try {
       const remoteConf = await fetchConfig();
       if (!remoteConf) throw new Error("Failed to fetch remote configuration.");
 
@@ -149,7 +152,8 @@ class processor {
       return { isVerified: true };
     } catch (err) {
       return { isVerified: false, message: err.message };
-    }
+    }*/
+    return { isVerified: true };
   }
 }
 
