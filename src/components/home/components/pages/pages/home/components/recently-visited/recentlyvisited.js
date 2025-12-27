@@ -3,25 +3,19 @@ import './recentlyvisited.css';
 import AppButton from './appbutton';
 import { useState, useEffect } from 'react';
 
-//App icon
-import ZenAI from '../../../../../../../../resources/appicon/ZenAI.svg'
-import ZenCourse from '../../../../../../../../resources/appicon/ZenCourse.png'
 import ZenGuard from '../../../../../../../../resources/appicon/ZenGuard.png'
-import GitHelper from '../../../../../../../../resources/appicon/githelper.svg'
-import ZenClock from '../../../../../../../../resources/appicon/zenclock.svg'
-import ZenEngine from '../../../../../../../../resources/appicon/ZenEngine.svg'
 
 export default function RecentVisit({ userSettings }) {
 
   const appMap = {
     'ZenAI': {
       name: 'ZenAI',
-      icon: ZenAI,
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zenai/refs/heads/main/src/resource/icon.svg",
       url: 'https://zenxync.github.io/zenai/',
     },
     'ZenCourse': {
       name: 'ZenCourse',
-      icon: ZenCourse,
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zencourse/refs/heads/main/src/resource/Icon.png",
       url: 'https://zenxync.github.io/zencourse/',
     },
     'ZenGuard': {
@@ -31,18 +25,23 @@ export default function RecentVisit({ userSettings }) {
     },
     'GitHelper': {
       name: 'GitHelper',
-      icon: GitHelper,
+      icon: "https://raw.githubusercontent.com/ZenxyNC/githelper/refs/heads/main/public/favicon.svg",
       url: 'https://zenxync.github.io/githelper/',
     },
     'ZenClock': {
       name: 'ZenClock',
-      icon: ZenClock,
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zenclock/refs/heads/main/public/favicon.svg",
       url: 'https://zenxync.github.io/zenclock/',
     },
     'ZenEngine': {
       name: 'ZenEngine',
-      icon: ZenEngine,
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zenengine/refs/heads/main/public/zenengine.svg",
       url: 'https://zenxync.github.io/zenengine/',
+    },
+    'ZenDocs': {
+      name: 'ZenDocs',
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/zendocs-plain.svg",
+      url: 'https://zenxync.github.io/zendocs/',
     }
   }
 
@@ -61,11 +60,9 @@ export default function RecentVisit({ userSettings }) {
 
   useEffect(() => {
     localStorage.setItem('zencore-recentvisit', JSON.stringify(recentVisit));
-    console.log(recentVisit);
   }, [recentVisit]);
 
   function addVisit(appName) {
-    console.log(appName)
     if(recentVisit.includes(appName)){
       setRecentVisit(prev => prev.filter(name => name !== appName));
     }

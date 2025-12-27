@@ -17,7 +17,7 @@ export default function Account({ confirm, setConfirm }) {
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zenapps-global-id'))
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
       const zencoreInfo_parsed = JSON.parse(localStorage.getItem('zencore-info'))
       userdata_object = {
         username: userInfo_parsed.id,
@@ -27,7 +27,7 @@ export default function Account({ confirm, setConfirm }) {
         isAutoLogin: zencoreInfo_parsed.isAutoLogin
       }
     } catch (err) {
-      navigate('/zencore/login')
+      navigate('/login')
     }
 
     return userdata_object
@@ -37,12 +37,12 @@ export default function Account({ confirm, setConfirm }) {
     <>
       <div className="pages-title">Account</div>
       <div className='pages-divider'></div>
-      
+
       <div id='account-maindiv'>
         <LinkedApps />
-        <AutoLogin autoLoginState={userInfo.isAutoLogin}/>
-        <Logout 
-          username={userInfo.username} 
+        <AutoLogin autoLoginState={userInfo.isAutoLogin} />
+        <Logout
+          username={userInfo.username}
           confirm={confirm} setConfirm={setConfirm}
         />
         {/*<EditDetails userInfo={userInfo} />*/}

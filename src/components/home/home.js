@@ -24,7 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     try {
-      const savedInfo = JSON.parse(localStorage.getItem('zenapps-global-id'));
+      const savedInfo = JSON.parse(localStorage.getItem('zencore-global-id'));
       if (savedInfo.id && savedInfo.password_hashed) {
         getUserSettings()
       } else {
@@ -44,7 +44,7 @@ export default function Home() {
         const parseSettings = JSON.parse(savedSettings);
         setUserSettings(parseSettings);
 
-        if(parseSettings.openAtStart === 'home') {
+        if (parseSettings.openAtStart === 'home') {
           // The page is already home, do nothing
         } else if (parseSettings.openAtStart === 'projects') {
           setSearchParams({ page: 'projects' });
@@ -101,17 +101,17 @@ export default function Home() {
       {userSettings?.animatedBackground &&
         <div id="animated-background">
           <ColorBends
-            rotation = {0}
-            speed = {0.2}
-            colors = {['#7200F4', '#007AFF', '#45c2baff', '#0F131A']}
-            transparent = {false}
-            autoRotate = {0}
-            scale = {0.8}
-            frequency = {1}
-            warpStrength = {1}
-            mouseInfluence = {0}
-            parallax = {0.5}
-            noise = {0.1}
+            rotation={0}
+            speed={0.2}
+            colors={['#7200F4', '#007AFF', '#45c2baff', '#0F131A']}
+            transparent={false}
+            autoRotate={0}
+            scale={0.8}
+            frequency={1}
+            warpStrength={1}
+            mouseInfluence={0}
+            parallax={0.5}
+            noise={0.1}
           />
         </div>
       }

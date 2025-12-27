@@ -11,13 +11,13 @@ export default function UserGreeting() {
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zenapps-global-id'))
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
       const [get_fname, get_lname] = userInfo_parsed.id.split(" ")
       userdata_object = {
         names: {
-          fullname : userInfo_parsed.id,
-          fname : get_fname,
-          lname : get_lname
+          fullname: userInfo_parsed.id,
+          fname: get_fname,
+          lname: get_lname
         },
         license: _ASSETS[userInfo_parsed.id].credentials.license,
         email: _ASSETS[userInfo_parsed.id].credentials.email,
@@ -45,18 +45,18 @@ export default function UserGreeting() {
     }
 
     function formatTime(request) {
-      if(request === "date") {
-        if(current.getDate() < 10) {
+      if (request === "date") {
+        if (current.getDate() < 10) {
           return "0" + current.getDate()
         }
         return current.getDate()
       } else if (request === "hour") {
-        if(current.getHours() < 10) {
+        if (current.getHours() < 10) {
           return "0" + current.getHours()
         }
         return current.getHours()
       } else if (request === "minute") {
-        if(current.getMinutes() < 10) {
+        if (current.getMinutes() < 10) {
           return "0" + current.getMinutes()
         }
         return current.getMinutes()
@@ -64,19 +64,19 @@ export default function UserGreeting() {
     }
 
     var timeInfo_object = {
-        dayName: current.toLocaleDateString('en-US', { weekday: 'short' }),
-        date: formatTime('date'),
-        month: current.getMonth(),
-        year: current.getFullYear(),
-        hour: formatTime('hour'),
-        minute: formatTime('minute'),
-        greeting: greeting  // Added greeting property
+      dayName: current.toLocaleDateString('en-US', { weekday: 'short' }),
+      date: formatTime('date'),
+      month: current.getMonth(),
+      year: current.getFullYear(),
+      hour: formatTime('hour'),
+      minute: formatTime('minute'),
+      greeting: greeting  // Added greeting property
     };
 
     if (method === "self-request") {
-        return timeInfo_object;
+      return timeInfo_object;
     } else if (method === "auto-request") {
-        setTimeInfo(timeInfo_object);
+      setTimeInfo(timeInfo_object);
     }
   }
   return (

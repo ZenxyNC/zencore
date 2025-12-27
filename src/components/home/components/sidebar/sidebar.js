@@ -6,7 +6,7 @@ import { _ASSETS } from '../../../login/secured-login/loginAssets';
 
 export default function Sidebar({ visible, setVisible, userSettings }) {
   const navigate = useNavigate();
-  const [userinfo] = useState(getSavedInfo() || {username: '', license: '', email: '', phone: ''});
+  const [userinfo] = useState(getSavedInfo() || { username: '', license: '', email: '', phone: '' });
   const [currentPage, setCurrentPage] = useState('home');
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -28,7 +28,7 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zenapps-global-id'))
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
       userdata_object = {
         username: userInfo_parsed.id,
         license: _ASSETS[userInfo_parsed.id].credentials.license,
@@ -71,9 +71,9 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
     return `${countryCode} ******${lastThree}`;
   }
 
-  return(
+  return (
     <>
-      <div 
+      <div
         id='sidebar-closearea'
         onClick={() => setVisible(false)}
         className={visible ? "show" : ''}
@@ -87,16 +87,16 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
 
         <div id='useridentity-contact' translate='no'>
           <div id='useridentity-email'> {userSettings?.hideContact ? censorEmail(userinfo.email) : userinfo.email}</div>
-          <div id='useridentity-phone' style={{marginTop: '5px'}}> {userSettings?.hideContact ? censorPhone(userinfo.phone) : userinfo.phone}</div>
+          <div id='useridentity-phone' style={{ marginTop: '5px' }}> {userSettings?.hideContact ? censorPhone(userinfo.phone) : userinfo.phone}</div>
         </div>
 
         <div
           className='divider-line'
-          style={{marginTop: '30px'}}
+          style={{ marginTop: '30px' }}
         />
 
         <div id='page-selector'>
-          <div 
+          <div
             className={`${currentPage === "home" ? 'page-selector-div active' : 'page-selector-div inactive'}`}
             tabIndex={0}
             role='button'
@@ -106,7 +106,7 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
             <div className='pageselector-label'>Home</div>
           </div>
 
-          <div 
+          <div
             className={`${currentPage === "projects" ? 'page-selector-div active' : 'page-selector-div inactive'}`}
             tabIndex={0}
             role='button'
@@ -116,7 +116,7 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
             <div className='pageselector-label'>Projects</div>
           </div>
 
-          <div 
+          <div
             className={`${currentPage === "account" ? 'page-selector-div active' : 'page-selector-div inactive'}`}
             tabIndex={0}
             role='button'
@@ -125,8 +125,8 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
             <div className={`${currentPage === "account" ? 'pageselector-pointer active' : 'pageselector-pointer inactive'}`}></div>
             <div className='pageselector-label'>Account</div>
           </div>
-          
-          <div 
+
+          <div
             className={`${currentPage === "settings" ? 'page-selector-div active' : 'page-selector-div inactive'}`}
             tabIndex={0}
             role='button'

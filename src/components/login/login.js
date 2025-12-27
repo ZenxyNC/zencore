@@ -35,9 +35,9 @@ export default function Login() {
       }
 
       //Save the info
-      localStorage.setItem('zenapps-global-id', JSON.stringify(returnInfo))
+      localStorage.setItem('zencore-global-id', JSON.stringify(returnInfo))
       localStorage.setItem('zencore-info', JSON.stringify(zencoreinfo))
-      
+
       //Save default local settings
       const defaultSettings = {
         hideContact: false,
@@ -49,7 +49,7 @@ export default function Login() {
 
       //Redirect user
       setSnackbar({
-        isOpened : true, 
+        isOpened: true,
         message: 'Redirecting...',
         duration: 5000
       });
@@ -58,52 +58,52 @@ export default function Login() {
       }, 1000);
     } else {
       setSnackbar({
-        isOpened : true, 
+        isOpened: true,
         message: userLoginState.message,
         duration: 3000
       })
     }
   }
 
-  
+
 
   function handleSubmit(ev) {
     ev.preventDefault();
     handleLogin();
   }
 
-  return(
+  return (
     <>
       <div id='login-maindiv'>
         <div id='zencore-icon'></div>
         <form onSubmit={handleSubmit}>
-          <input 
-            type="text" 
-            placeholder="Username" 
+          <input
+            type="text"
+            placeholder="Username"
             autoComplete="off"
             onInput={(ev) => setCredentials({ ...credentials, username: ev.target.value })}
           />
-          <input 
-            type="password" 
-            placeholder="Password" 
+          <input
+            type="password"
+            placeholder="Password"
             autoComplete="off"
             onInput={(ev) => setCredentials({ ...credentials, password: ev.target.value })}
           />
           <button type="submit" id='login-button'>Login</button>
         </form>
       </div>
-        {snackbar.isOpened && 
-          <Snackbar 
-            message={snackbar.message} 
-            duration={snackbar.duration} 
-            onClose={() => setSnackbar({ 
-              isOpened: false, 
-              message: '', 
-              duration: 3000 
-            })}
-          />
-        }
-  
+      {snackbar.isOpened &&
+        <Snackbar
+          message={snackbar.message}
+          duration={snackbar.duration}
+          onClose={() => setSnackbar({
+            isOpened: false,
+            message: '',
+            duration: 3000
+          })}
+        />
+      }
+
     </>
   )
 }

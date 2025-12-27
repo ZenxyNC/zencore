@@ -22,7 +22,14 @@
   position: fixed;
   left: unset;
   z-index: 1000;
+
+  overflow-y: scroll
 }
+
+#sidebar-maindiv::-webkit-scrollbar {
+  display: none;
+}
+
 #sidebar-maindiv.show {
   left: 0px;
 }

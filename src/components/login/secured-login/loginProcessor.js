@@ -23,7 +23,7 @@ class processor {
 
 
   //You can change this based on your needs.
-  name; 
+  name;
   #password;
 
   //Don't forget to change the constructor also.
@@ -36,7 +36,7 @@ class processor {
   //startEngine is the MAIN FUNCTION. 
   async startEngine() {
     const engineVerifying = await this.verifyEngine();
-    
+
     if (engineVerifying?.isVerified) {
       this.#engineVerified = true;
       console.log("Process started.");
@@ -47,14 +47,14 @@ class processor {
         this.hash()
       } catch (error) {
         console.log("No local-saved info. Continuing to do non-autofetch protocol.");
-        if(this.#engineVerified) {
+        if (this.#engineVerified) {
           this.hash();
         } else {
           console.error("Local ZenGuard Engine is not verified.")
         }
       }
 
-      if(this.#hashedPassword) {
+      if (this.#hashedPassword) {
         const doVerify = this.verify(); //Start info verification.
         return doVerify //Return the needed value.
       } else {
@@ -94,8 +94,8 @@ class processor {
           if (this.#hashedPassword === userPassword) {
             console.info("Login success.");
             //You can save the login info to local storage by calling "this.saveInfo()"
-            return this.sendResponse("OK", { name : this.name, password : this.#hashedPassword })
-  
+            return this.sendResponse("OK", { name: this.name, password: this.#hashedPassword })
+
           } else {
             throw new Error("Password not match.");
           }
@@ -105,15 +105,15 @@ class processor {
       } else {
         throw new Error("Password is unreadable.");
       }
-    } catch(err) {
+    } catch (err) {
       return this.sendResponse("FAIL", err.message)
     }
   }
-  
+
   // "status" is where you put the success/fail indicator.
   // "object" is where you put information you want to provide or error message.
   sendResponse(status, object) {
-    return { status : status, message : object }
+    return { status: status, message: object }
   }
 
 
@@ -126,7 +126,7 @@ class processor {
 
     try {
       //Save the information.
-      localStorage.setItem("zenapps-global-id", toSave); //You can change the localStorage variable name.
+      localStorage.setItem("zencore-global-id", toSave); //You can change the localStorage variable name.
     } catch (error) {
       console.log(error);
       console.log("Info saving is failed. No data saved.");
