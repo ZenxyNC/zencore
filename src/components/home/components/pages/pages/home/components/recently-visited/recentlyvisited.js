@@ -3,48 +3,7 @@ import './recentlyvisited.css';
 import AppButton from './appbutton';
 import { useState, useEffect } from 'react';
 
-//App icon
-import ZenAI from '../../../../../../../../resources/appicon/ZenAI.svg'
-import ZenCourse from '../../../../../../../../resources/appicon/ZenCourse.png'
-import ZenGuard from '../../../../../../../../resources/appicon/ZenGuard.png'
-import GitHelper from '../../../../../../../../resources/appicon/githelper.svg'
-import ZenClock from '../../../../../../../../resources/appicon/zenclock.svg'
-import ZenEngine from '../../../../../../../../resources/appicon/ZenEngine.svg'
-
-export default function RecentVisit({ userSettings }) {
-
-  const appMap = {
-    'ZenAI': {
-      name: 'ZenAI',
-      icon: ZenAI,
-      url: 'https://zenxync.github.io/zenai/',
-    },
-    'ZenCourse': {
-      name: 'ZenCourse',
-      icon: ZenCourse,
-      url: 'https://zenxync.github.io/zencourse/',
-    },
-    'ZenGuard': {
-      name: 'ZenGuard',
-      icon: ZenGuard,
-      url: 'https://zenxync.github.io/zenguard/',
-    },
-    'GitHelper': {
-      name: 'GitHelper',
-      icon: GitHelper,
-      url: 'https://zenxync.github.io/githelper/',
-    },
-    'ZenClock': {
-      name: 'ZenClock',
-      icon: ZenClock,
-      url: 'https://zenxync.github.io/zenclock/',
-    },
-    'ZenEngine': {
-      name: 'ZenEngine',
-      icon: ZenEngine,
-      url: 'https://zenxync.github.io/zenengine/',
-    }
-  }
+export default function RecentVisit({ userSettings, appMap }) {
 
   const [recentVisit, setRecentVisit] = useState(() => {
     const savedVisit = localStorage.getItem('zencore-recentvisit');
@@ -61,11 +20,9 @@ export default function RecentVisit({ userSettings }) {
 
   useEffect(() => {
     localStorage.setItem('zencore-recentvisit', JSON.stringify(recentVisit));
-    console.log(recentVisit);
   }, [recentVisit]);
 
   function addVisit(appName) {
-    console.log(appName)
     if(recentVisit.includes(appName)){
       setRecentVisit(prev => prev.filter(name => name !== appName));
     }
@@ -78,6 +35,23 @@ export default function RecentVisit({ userSettings }) {
     });
   }
 
+  function findMetadata(appName, index) {
+    const app = appMap.find(app => app.name === appName);
+    if (app) {
+      return (
+        <AppButton
+          key={index}
+          img={app.icon}
+          appname={app.name}
+          url={app.url}
+          openIn={userSettings?.openProjectIn}
+          addVisit={addVisit}
+        />
+      );
+    }
+    return null;
+  }
+
   return (
     <>
       <div className="componentbody" id="recentvisit-body">
@@ -85,14 +59,7 @@ export default function RecentVisit({ userSettings }) {
         <div className='components-divider'></div>
         <div id="recentvisit-maindiv">
           {recentVisit.map((app, index) => (
-            <AppButton
-              key={index}
-              img={appMap[app].icon}
-              appname={appMap[app].name}
-              url={appMap[app].url}
-              openIn={userSettings?.openProjectIn}
-              addVisit={addVisit}
-            />
+            findMetadata(app, index)
           ))}
         </div>
       </div>

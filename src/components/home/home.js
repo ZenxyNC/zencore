@@ -22,16 +22,45 @@ export default function Home() {
 
   var navigate = useNavigate();
 
+  async function verifyLogin(id, password_hashed) {
+    try {
+      const loginProcessor = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: id,
+          password: password_hashed,
+          isHashed: true
+        })
+      })
+
+      const loginProcessorState = await loginProcessor.json();
+
+      if(!loginProcessorState.ok) {
+        console.log(loginProcessorState)
+        throw new Error(loginProcessorState.message)
+      } else {
+        getUserSettings()
+      }
+    } catch(err) {
+      console.log(err)
+      navigate('/login')
+    }
+  }
+
   useEffect(() => {
     try {
-      const savedInfo = JSON.parse(localStorage.getItem('zenapps-global-id'));
+      const savedInfo = JSON.parse(localStorage.getItem('zencore-global-id'));
       if (savedInfo.id && savedInfo.password_hashed) {
-        getUserSettings()
+        verifyLogin(savedInfo.id, savedInfo.password_hashed)
       } else {
         throw new Error("Incomplete required data.")
       }
     } catch (err) {
       //Redirect if user is not logged in.
+      console.log(err)
       navigate('/login')
     }
     //eslint-disable-next-line
@@ -52,8 +81,9 @@ export default function Home() {
       } else {
         //No action
       }
-    } finally {
-
+    } catch(err) {
+      console.log(err)
+      navigate('/login');
     }
   }
 

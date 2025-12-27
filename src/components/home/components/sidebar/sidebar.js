@@ -6,7 +6,7 @@ import { _ASSETS } from '../../../login/secured-login/loginAssets';
 
 export default function Sidebar({ visible, setVisible, userSettings }) {
   const navigate = useNavigate();
-  const [userinfo] = useState(getSavedInfo() || {username: '', license: '', email: '', phone: ''});
+  const [userinfo, setUserinfo] = useState({});
   const [currentPage, setCurrentPage] = useState('home');
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -14,6 +14,10 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
     const page = searchParams.get("page") || "home";
     setCurrentPage(page)
   }, [searchParams])
+
+  useEffect(() => {
+    getSavedInfo()
+  }, [])
 
   function handleNavigation(page) {
     setSearchParams({ page }); // sets ?page=projects, etc.
@@ -25,30 +29,48 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
     handleNavigation(target)
   }
 
-  function getSavedInfo() {
-    var userdata_object
+  async function getSavedInfo() {
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zenapps-global-id'))
-      userdata_object = {
-        username: userInfo_parsed.id,
-        license: _ASSETS[userInfo_parsed.id].credentials.license,
-        email: _ASSETS[userInfo_parsed.id].credentials.email,
-        phone: _ASSETS[userInfo_parsed.id].credentials.phone,
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
+      const fetchProcess = await fetch(`${process.env.REACT_APP_API_URL}/usercredentials`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: userInfo_parsed.id
+        })
+      })
+      const fetchProcessState = await fetchProcess.json();
+      const returnObject =  {
+        username: fetchProcessState.username,
+        license: fetchProcessState.license,
+        email: fetchProcessState.email,
+        phone: fetchProcessState.phone
       }
+      setUserinfo(returnObject)
     } catch (err) {
-      navigate('/zencore/login')
+      const returnObject =  {
+        username: "ERROR FETCHING API",
+        license: "ERROR FETCHING API",
+        email: "ERROR FETCHING API",
+        phone: "ERROR FETCHING API"
+      }
+      setUserinfo(returnObject)
     }
-
-    return userdata_object
   }
 
   function findInitial() {
     try {
       const [fname, lname] = userinfo.username.split(" ");
+      if(!lname) {
+        return fname[0]
+      }
+
       const defineFirstLetter = fname[0] + lname[0];
       return defineFirstLetter
     } catch (err) {
-      navigate('/login')
+      console.log("Last name couldn't be found. Continuing with first name.")
     }
   }
 

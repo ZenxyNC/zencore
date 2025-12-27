@@ -1,8 +1,7 @@
 //Import style
 import './login.css';
 
-//Import module
-import loginProcessor from './secured-login/loginProcessor';
+// Import module
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Snackbar from './zenengine/snackbar/snackbar';
@@ -20,48 +19,57 @@ export default function Login() {
     duration: 3000,
   })
 
+  function openSnackbar(message) {
+    setSnackbar({
+      isOpened : true, 
+      message: message,
+      duration: 3000
+    })
+  }
+
+  function saveInfo() {
+    var zencoreinfo = {
+      isLoggedIn: true,
+      isAutoLogin: false
+    }
+
+    //Save the info
+    localStorage.setItem('zencore-info', JSON.stringify(zencoreinfo))
+    
+    //Save default local settings
+    const defaultSettings = {
+      hideContact: false,
+      animatedBackground: false,
+      openAtStart: 'home',
+      openProjectIn: 'currenttab'
+    }
+    localStorage.setItem('zencore-usersettings', JSON.stringify(defaultSettings))
+  }
+
   async function handleLogin() {
-    const userLogin = new loginProcessor(credentials.username, credentials.password);
-    const userLoginState = await userLogin.startEngine();
-
-    if (userLoginState.status === "OK") {
-      var returnInfo = {
-        id: userLoginState.message.name,
-        password_hashed: userLoginState.message.password
-      }
-      var zencoreinfo = {
-        isLoggedIn: true,
-        isAutoLogin: false
-      }
-
-      //Save the info
-      localStorage.setItem('zenapps-global-id', JSON.stringify(returnInfo))
-      localStorage.setItem('zencore-info', JSON.stringify(zencoreinfo))
-      
-      //Save default local settings
-      const defaultSettings = {
-        hideContact: false,
-        animatedBackground: false,
-        openAtStart: 'home',
-        openProjectIn: 'currenttab'
-      }
-      localStorage.setItem('zencore-usersettings', JSON.stringify(defaultSettings))
-
-      //Redirect user
-      setSnackbar({
-        isOpened : true, 
-        message: 'Redirecting...',
-        duration: 5000
-      });
-      setTimeout(() => {
-        navigate('/home')
-      }, 1000);
-    } else {
-      setSnackbar({
-        isOpened : true, 
-        message: userLoginState.message,
-        duration: 3000
+    try {
+      const loginProcessor = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
       })
+
+      const loginProcessorState = await loginProcessor.json();
+
+      if(loginProcessorState.ok) {
+        localStorage.setItem('zencore-global-id', JSON.stringify({id: loginProcessorState.object.username, password_hashed: loginProcessorState.object.password}))
+        saveInfo();
+        openSnackbar('Logging in...');
+        setTimeout(() => {
+          navigate('/home');
+        }, 1000);
+      } else {
+        openSnackbar(loginProcessorState.message);
+      }
+    } catch (err) {
+      openSnackbar('Error while fetching API. Please try again later.');
     }
   }
 

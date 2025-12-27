@@ -3,50 +3,10 @@ import './projects.css'
 
 import AppButton from './appbutton';
 
-//AppIcon
-import ZenAI from '../../../../../../resources/appicon/ZenAI.svg'
-import ZenCourse from '../../../../../../resources/appicon/ZenCourse.png'
-import ZenGuard from '../../../../../../resources/appicon/ZenGuard.png'
-import GitHelper from '../../../../../../resources/appicon/githelper.svg'
-import ZenClock from '../../../../../../resources/appicon/zenclock.svg'
-import ZenEngine from '../../../../../../resources/appicon/ZenEngine.svg'
-
 import { useState, useEffect } from 'react';
 
 
-export default function Projects({ userSettings }) {
-  const appMap = {
-    'ZenAI': {
-      name: 'ZenAI',
-      icon: ZenAI,
-      url: 'https://zenxync.github.io/zenai/',
-    },
-    'ZenCourse': {
-      name: 'ZenCourse',
-      icon: ZenCourse,
-      url: 'https://zenxync.github.io/zencourse/',
-    },
-    'ZenGuard': {
-      name: 'ZenGuard',
-      icon: ZenGuard,
-      url: 'https://zenxync.github.io/zenguard/',
-    },
-    'GitHelper': {
-      name: 'GitHelper',
-      icon: GitHelper,
-      url: 'https://zenxync.github.io/githelper/',
-    },
-    'ZenClock': {
-      name: 'ZenClock',
-      icon: ZenClock,
-      url: 'https://zenxync.github.io/zenclock/',
-    },
-    'ZenEngine': {
-      name: 'ZenEngine',
-      icon: ZenEngine,
-      url: 'https://zenxync.github.io/zenengine/',
-    }
-  }
+export default function Projects({ userSettings, appMap }) {
 
   const [recentVisit, setRecentVisit] = useState(() => {
     const savedVisit = localStorage.getItem('zencore-recentvisit');
@@ -63,11 +23,9 @@ export default function Projects({ userSettings }) {
 
   useEffect(() => {
     localStorage.setItem('zencore-recentvisit', JSON.stringify(recentVisit));
-    console.log(recentVisit);
   }, [recentVisit]);
 
   function addVisit(appName) {
-    console.log(appName)
     if(recentVisit.includes(appName)){
       setRecentVisit(prev => prev.filter(name => name !== appName));
     }
@@ -85,7 +43,19 @@ export default function Projects({ userSettings }) {
       <div className="pages-title">Projects</div>
       <div className='pages-divider'></div>
       <div id='projects-maindiv'>
-        {Object.entries(appMap).map(([key, value], index) => (
+        {appMap.map((app, index) => (
+          app.name !== "ZenCore" ? (
+            <AppButton 
+              key={index}
+              img={app.icon}
+              appname={app.name}
+              url={app.url}
+              openIn={userSettings?.openProjectIn}
+              addVisit={addVisit}
+            />
+          ) : null
+        ))}
+        {/*{Object.entries(appMap).map(([key, value], index) => (
           <AppButton 
             key={index}
             img={value.icon}
@@ -94,7 +64,7 @@ export default function Projects({ userSettings }) {
             openIn={userSettings?.openProjectIn}
             addVisit={addVisit}
           />
-        ))}
+        ))}*/}
       </div>
     </>
   )

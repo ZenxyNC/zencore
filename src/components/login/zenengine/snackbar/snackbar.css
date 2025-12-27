@@ -11,9 +11,10 @@
     right: 15px;  /*Positioned 15px from right by default. Change this based on yuor needs.*/
 
     width: 300px; /*Changable.*/
-    height: 45px; /*Changable*/
+    height: max-content;
+    min-height: 45px; /*Changable*/
 
-    padding: 5px 10px 5px 15px; /*Changable*/
+    padding: 10px 10px 10px 15px; /*Changable*/
 
     background-color: rgba(23, 28, 35, 0.7); /*Changable*/
     box-shadow: 0px 0px 16px -2px #000000; /*Optional, changable*/

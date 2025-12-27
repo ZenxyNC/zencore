@@ -11,7 +11,7 @@ export default function UserGreeting() {
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zenapps-global-id'))
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
       const [get_fname, get_lname] = userInfo_parsed.id.split(" ")
       userdata_object = {
         names: {
