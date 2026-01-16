@@ -66,7 +66,7 @@ export default function UserGreeting() {
     var timeInfo_object = {
       dayName: current.toLocaleDateString('en-US', { weekday: 'short' }),
       date: formatTime('date'),
-      month: current.getMonth(),
+      month: current.getMonth() + 1,
       year: current.getFullYear(),
       hour: formatTime('hour'),
       minute: formatTime('minute'),

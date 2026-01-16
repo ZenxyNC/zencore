@@ -1,7 +1,7 @@
 {
   "homepage": "https://zenxync.github.io/zencore/",
   "name": "zencore",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "private": true,
   "dependencies": {
     "@react-three/fiber": "^9.1.2",
