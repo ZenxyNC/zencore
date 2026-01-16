@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zencore/static/css/main.a9cef495.css",
-    "main.js": "/zencore/static/js/main.0b01ebd6.js",
+    "main.js": "/zencore/static/js/main.ad52b793.js",
     "static/js/453.571a097c.chunk.js": "/zencore/static/js/453.571a097c.chunk.js",
     "static/media/ZenGuard.png": "/zencore/static/media/ZenGuard.5e29f74c8717febe90df.png",
     "static/media/PlusJakartaSans-SemiBold.ttf": "/zencore/static/media/PlusJakartaSans-SemiBold.cf92107f36f071f6384c.ttf",
@@ -15,11 +15,11 @@
     "static/media/dots-menu.svg": "/zencore/static/media/dots-menu.9adb527ff3011e6f1515.svg",
     "index.html": "/zencore/index.html",
     "main.a9cef495.css.map": "/zencore/static/css/main.a9cef495.css.map",
-    "main.0b01ebd6.js.map": "/zencore/static/js/main.0b01ebd6.js.map",
+    "main.ad52b793.js.map": "/zencore/static/js/main.ad52b793.js.map",
     "453.571a097c.chunk.js.map": "/zencore/static/js/453.571a097c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a9cef495.css",
-    "static/js/main.0b01ebd6.js"
+    "static/js/main.ad52b793.js"
   ]
 }
