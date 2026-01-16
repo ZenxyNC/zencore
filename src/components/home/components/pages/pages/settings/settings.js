@@ -2,7 +2,7 @@ import './settings.css';
 import Switch from './components/switch';
 import { useEffect } from 'react';
 
-export default function Settings({ userSettings, setUserSettings, confirm, setConfirm }) {
+export default function Settings({ userSettings, setUserSettings, AlertStructure, setAlertStructure }) {
 
   return (
     <>
@@ -28,17 +28,25 @@ export default function Settings({ userSettings, setUserSettings, confirm, setCo
           <Switch 
             onInput={() => {
               if(!userSettings?.animatedBackground) {
-                setConfirm({
+                setAlertStructure((prev) => ({
+                  ...prev,
                   isOpened: true,
+                  type: "confirmation",
                   title: "Heavy feature",
-                  message: "Animated background is a heavy feature due to high RAM usage and processing that may causing lags, glitch, and frame dropping (depends on device). Turn on?",
-                  action: () => {
+                  message: "Animated background is a heavy feature due to high GPU usage and processing that may causing lags, glitch, and frame drops (depends on device). Turn on?",
+                  actionOk: () => {
                     setUserSettings(prevSettings => ({
                       ...prevSettings,
                       animatedBackground: !prevSettings.animatedBackground
                     }));
-                  } 
-                })
+                  },
+                  actionCancel: () => {
+                    setAlertStructure((prev) => ({
+                      ...prev,
+                      isOpened: false
+                    }));
+                  }
+                }))
               } else {
                 setUserSettings(prevSettings => ({
                   ...prevSettings,

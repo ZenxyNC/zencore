@@ -1,7 +1,7 @@
 {
   "homepage": "https://zenxync.github.io/zencore/",
   "name": "zencore",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "private": true,
   "dependencies": {
     "@react-three/fiber": "^9.1.2",
@@ -12,6 +12,7 @@
     "react": "^19.1.0",
     "react-devtools": "^7.0.1",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
     "react-lazy-load-image-component": "^1.6.3",
     "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",

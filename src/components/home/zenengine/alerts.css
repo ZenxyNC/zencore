@@ -1,0 +1,193 @@
+/*===== Resets =====*/
+#alert-mainbody p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Alert Background ===== */
+#alert-background {
+  width: 100dvw;
+  height: 100dvh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.6); /*000000, 60%*/
+  backdrop-filter: blur(16px);
+  opacity: 1;
+  pointer-events: all;
+
+  transition: 0.2s;
+}
+
+#alert-background.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*===== Alert Main Body =====*/
+#alert-mainbody {
+  width: calc(100vw - 64px - 64px)
+    /*100vw - margin-right - margin-left - padding-right - padding-left*/
+  ;
+  max-width: 400px;
+  height: max-content;
+  min-height: 220px;
+
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 16px;
+
+  color: #F5F5F5;
+
+  background-color: rgb(15, 19, 26, 0.8); /*0F131A, 80%*/
+  backdrop-filter: blur(16px);
+
+  border-radius: 32px;
+  border: 1px solid rgb(245, 245, 245, 0.2); /*F5F5F5, 20%*/
+}
+
+#alert-mainbody.success {
+  border-color: rgb(0, 122, 255, 0.2); /*007AFF, 20%*/
+}
+
+#alert-mainbody.error {
+  border-color: rgb(255, 57, 61, 0.2); /*FF393D, 20%*/
+}
+
+#alert-mainbody.warning,
+#alert-mainbody.confirmation {
+  border-color: rgb(255, 204, 0, 0.2); /*FFCC00, 20%*/
+}
+
+#alert-mainbody.input,
+#alert-mainbody.information {
+  border-color: rgb(245, 245, 245, 0.2); /*F5F5F5, 20%*/
+}
+
+
+/*===== Alert Type (Icon & Title) =====*/
+#alert-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: max-content;
+  height: 60px;
+}
+
+#alert-title {
+  font-size: 28px !important;
+  color: #F5F5F5
+}
+
+#alert-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 60px;
+  border: 1px solid rgb(245, 245, 245, 0.2); /*F5F5F5, 20%*/
+}
+
+#alert-icon.success {
+  background-color: rgb(0, 122, 255, 0.2); /*007AFF, 20%*/
+  border: 1px solid rgb(0, 122, 255, 0.2); /*007AFF, 20%*/
+}
+
+#alert-icon.error {
+  background-color: rgb(255, 57, 61, 0.2); /*FF393D, 20%*/
+  border: 1px solid rgb(255, 57, 61, 0.2); /*FF393D, 20%*/
+}
+
+#alert-icon.warning,
+#alert-icon.confirmation {
+  background-color: rgb(255, 204, 0, 0.2); /*FFCC00, 20%*/
+  border: 1px solid rgb(255, 204, 0, 0.2); /*FFCC00, 20%*/
+}
+
+#alert-icon.information,
+#alert-icon.input {
+  background-color: rgb(245, 245, 245, 0.1); /*F5F5F5, 10%*/
+  border: 1px solid rgb(245, 245, 245, 0.1); /*F5F5F5, 10%*/
+}
+
+
+/*===== Alert Buttons =====*/
+#alert-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  margin-top: auto;
+}
+
+#alert-button-primary {
+  width: calc(50% - 8px);
+  height: 44px;
+
+  padding: 0px 16px;
+
+  background-color: rgb(0, 122, 255, 0.8); /*007AFF, 80%*/
+
+  border-radius: 12px;
+  border: none;
+
+  color: #F5F5F5;
+  font-size: 16px;
+  font-family: _medium;
+
+  cursor: pointer;
+}
+
+#alert-button-secondary {
+  width: calc(50% - 8px);
+  height: 44px;
+
+  padding: 0px 16px;
+
+  background-color: rgb(23, 28, 35, 0.6); /*171C23, 60%*/
+
+  border-radius: 12px;
+  border: none;
+
+  color: #F5F5F5;
+  font-size: 16px;
+  font-family: _medium;
+
+  cursor: pointer;
+  visibility: hidden;
+}
+
+
+/*===== Alert Input =====*/
+#alert-input {
+  width: calc(100% - 32px);
+  height: 44px;
+
+  padding: 0px 16px;
+
+  background-color: transparent;
+
+  border-radius: 12px;
+  border: 1px solid rgb(245, 245, 245, 0.2); /*F5F5F5, 20%*/
+
+  color: #F5F5F5;
+  font-size: 16px;
+
+  cursor: text;
+}

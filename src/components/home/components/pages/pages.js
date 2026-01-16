@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Pages({ 
     userSettings, setUserSettings,
-    confirm, setConfirm
+    AlertStructure, setAlertStructure
   }) {
     
     var navigate = useNavigate();
@@ -34,10 +34,10 @@ export default function Pages({
     <div id="pages-maindiv">
       {page === "home" && <HomePage userSettings={userSettings} />}
       {page === "projects" && <Projects userSettings={userSettings} />}
-      {page === "account" && <Account confirm={confirm} setConfirm={setConfirm} />}
+      {page === "account" && <Account />}
       {page === "settings" && <Settings 
         userSettings={userSettings} setUserSettings={setUserSettings}
-        confirm={confirm} setConfirm={setConfirm}  
+        AlertStructure={AlertStructure} setAlertStructure={setAlertStructure}  
       />}
     </div>
   );

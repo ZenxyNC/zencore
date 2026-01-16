@@ -2,7 +2,7 @@ import Sidebar from "./components/sidebar/sidebar"
 import MNavbar from "./components/mobile.navbar/mobile.navbar"
 import Pages from './components/pages/pages'
 import ColorBends from "../../resources/animated-background/colorBends";
-import { Confirm } from './alert/alert'
+import ZenEngineAlert from "./zenengine/alerts"
 
 import './home.css'
 
@@ -13,12 +13,15 @@ export default function Home() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [userSettings, setUserSettings] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [confirm, setConfirm] = useState({
+  const [AlertStructure, setAlertStructure] = useState({
     isOpened: false,
-    title: '',
-    message: '',
-    action: null
-  })
+    type: "confirmation",
+    title: "Heavy Feature",
+    message: "Animated background is a heavy feature due to high GPU usage and processing that may causing lags, glitch, and frame drops (depends on device). Turn on?",
+    placeholder: "Enter text...",
+    actionOk: () => {},
+    actionCancel: () => {}
+  });
 
   var navigate = useNavigate();
 
@@ -64,38 +67,20 @@ export default function Home() {
     }
   }, [userSettings])
 
-  const handleConfirmClose = (result) => {
-    // Get the action before closing the confirm dialog
-    const actionToExecute = confirm.action;
 
-    setConfirm(prevSettings => ({
-      ...prevSettings,
-      isOpened: false,
-      action: null  // Clear the action
-    }))
-
-    if (result.ok) {
-      // Execute the stored action if it exists
-      if (actionToExecute && typeof actionToExecute === 'function') {
-        actionToExecute();
-      }
-    } else if (!result.ok) {
-
-    }
-  }
 
   return (
     <>
-      {confirm.isOpened &&
-        <Confirm title={confirm.title} message={confirm.message} onClose={handleConfirmClose} />
-      }
+      <ZenEngineAlert AlertStructure={AlertStructure} setAlertStructure={setAlertStructure} >
+        <p>{AlertStructure.message}</p>
+      </ZenEngineAlert>
       <div id="home-maindiv">
         <Sidebar visible={sidebarVisible} setVisible={setSidebarVisible} userSettings={userSettings} />
         <MNavbar setSidebarVisible={setSidebarVisible} />
 
         <Pages
           userSettings={userSettings} setUserSettings={setUserSettings}
-          confirm={confirm} setConfirm={setConfirm}
+          AlertStructure={AlertStructure} setAlertStructure={setAlertStructure}
         />
       </div>
       {userSettings?.animatedBackground &&

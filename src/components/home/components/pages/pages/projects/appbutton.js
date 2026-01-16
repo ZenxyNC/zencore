@@ -32,6 +32,7 @@ export default function AppButton({img, appname, url, openIn, addVisit}) {
             src={img}
             effect='blur'
             id='AppButton-image'
+            style={{ borderRadius: '16px' }}
           />
           <div id="AppButton-name">{appname}</div>
         </div>

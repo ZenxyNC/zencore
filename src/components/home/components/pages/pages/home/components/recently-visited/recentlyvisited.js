@@ -7,7 +7,7 @@ import ZenGuard from '../../../../../../../../resources/appicon/ZenGuard.png'
 
 export default function RecentVisit({ userSettings }) {
 
-  const appMap = {
+const appMap = {
     'ZenAI': {
       name: 'ZenAI',
       icon: "https://raw.githubusercontent.com/ZenxyNC/zenai/refs/heads/main/src/resource/icon.svg",
@@ -20,28 +20,33 @@ export default function RecentVisit({ userSettings }) {
     },
     'ZenGuard': {
       name: 'ZenGuard',
-      icon: ZenGuard,
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zenguard.png",
       url: 'https://zenxync.github.io/zenguard/',
     },
     'GitHelper': {
       name: 'GitHelper',
-      icon: "https://raw.githubusercontent.com/ZenxyNC/githelper/refs/heads/main/public/favicon.svg",
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/githelper.png",
       url: 'https://zenxync.github.io/githelper/',
     },
     'ZenClock': {
       name: 'ZenClock',
-      icon: "https://raw.githubusercontent.com/ZenxyNC/zenclock/refs/heads/main/public/favicon.svg",
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zenclock.png",
       url: 'https://zenxync.github.io/zenclock/',
     },
     'ZenEngine': {
       name: 'ZenEngine',
-      icon: "https://raw.githubusercontent.com/ZenxyNC/zenengine/refs/heads/main/public/zenengine.svg",
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zenengine.png",
       url: 'https://zenxync.github.io/zenengine/',
     },
     'ZenDocs': {
       name: 'ZenDocs',
-      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/zendocs-plain.svg",
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zendocs.png",
       url: 'https://zenxync.github.io/zendocs/',
+    },
+    'ZenApps': {
+      name: 'ZenApps',
+      icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zenapps.png",
+      url: 'https://zenxync.github.io/zenapps/',
     }
   }
 
