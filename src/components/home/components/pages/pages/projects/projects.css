@@ -6,13 +6,12 @@
   background-color: transparent;
 
   overflow-y: visible;
-  overflow-x:visible;
+  overflow-x: visible;
 
-  align-content: flex-start;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 20px;
-  justify-content: flex-start;
+  align-content: start;
 }
 
 #projects-maindiv::-webkit-scrollbar {
@@ -20,7 +19,8 @@
 }
 
 #AppButton-body {
-  width: calc(50% - 10px);
+  width: 100%;
+  min-width: 160px;
   aspect-ratio: 1/1;
 
   background-color: rgb(15, 19, 26, 0.4);
@@ -89,15 +89,14 @@
     overflow-y: visible;
     overflow-x: visible;
 
-    align-content: flex-start;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 25px;
-    justify-content: start;
+    align-content: start;
   }
 
   #AppButton-body {
-    width: calc((100% - 75px) / 4);
+    width: 100%;
     aspect-ratio: 1/1;
 
     background-color: rgb(15, 19, 26, 0.4);

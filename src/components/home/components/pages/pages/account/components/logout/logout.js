@@ -1,7 +1,7 @@
 import './logout.css'
 import { useNavigate } from 'react-router-dom'
 
-export default function Logout({ username, confirm, setConfirm }) {
+export default function Logout({ username, AlertStructure, setAlertStructure }) {
   var navigate = useNavigate();
 
   function handleLogout() {
@@ -17,12 +17,22 @@ export default function Logout({ username, confirm, setConfirm }) {
         role='button'
         tabIndex={0}
         onClick={() => {
-          setConfirm({
+          setAlertStructure((prev) => ({
+            ...prev,
             isOpened : true,
+            type: "confirmation",
             title : "Logging out",
             message : `You will be logged out from ${username}. App settings will be removed and ZenApps Auto-Login will be turned off. Continue?`,
-            action: () => handleLogout()
-          })
+            actionOk: () => {
+              handleLogout()
+            },
+            actionCancel: () => {
+              setAlertStructure((prev) => ({
+                ...prev,
+                isOpened: false
+              }))
+            }
+          }))
         }}
       >
         <div id='logout-title'>

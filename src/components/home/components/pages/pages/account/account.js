@@ -5,12 +5,13 @@ import AutoLogin from './components/autologin/autologin';
 import Logout from './components/logout/logout';
 import EditDetails from './components/editdetails/editdetails';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { _ASSETS } from '../../../../../login/secured-login/loginAssets'
 
-export default function Account({ confirm, setConfirm }) {
+export default function Account({ AlertStructure, setAlertStructure }) {
+  
   const navigate = useNavigate();
   const [userInfo] = useState(getSavedInfo());
 
@@ -43,7 +44,7 @@ export default function Account({ confirm, setConfirm }) {
         <AutoLogin autoLoginState={userInfo.isAutoLogin} />
         <Logout
           username={userInfo.username}
-          confirm={confirm} setConfirm={setConfirm}
+          AlertStructure={AlertStructure} setAlertStructure={setAlertStructure}
         />
         {/*<EditDetails userInfo={userInfo} />*/}
         <div id='account-bottomextender'></div>

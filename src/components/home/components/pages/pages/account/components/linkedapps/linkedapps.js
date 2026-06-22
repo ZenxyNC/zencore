@@ -9,12 +9,12 @@ export default function LinkedApps() {
         <div className="components-title">ZenApps</div>
         <ul id='linkedApps-appList'>
           <li>ZenCore</li>
-          <li>ZenAI</li>
           <li>ZenCourse</li>
-          <li>ZenScreen</li>
+          <li>ZenClock</li>
           <li>ZenGuard</li>
           <li>ZenEngine</li>
-          <li>ZenNotes</li>
+          <li>ZenDocs</li>
+          <li>ZenApps</li>
         </ul>
       </div>
     </>

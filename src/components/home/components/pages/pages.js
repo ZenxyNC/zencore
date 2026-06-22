@@ -34,7 +34,9 @@ export default function Pages({
     <div id="pages-maindiv">
       {page === "home" && <HomePage userSettings={userSettings} />}
       {page === "projects" && <Projects userSettings={userSettings} />}
-      {page === "account" && <Account />}
+      {page === "account" && <Account 
+        AlertStructure={AlertStructure} setAlertStructure={setAlertStructure}  
+      />}
       {page === "settings" && <Settings 
         userSettings={userSettings} setUserSettings={setUserSettings}
         AlertStructure={AlertStructure} setAlertStructure={setAlertStructure}  

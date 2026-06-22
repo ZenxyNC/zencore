@@ -3,18 +3,11 @@ import './projects.css'
 
 import AppButton from './appbutton';
 
-import ZenGuard from '../../../../../../resources/appicon/ZenGuard.png'
-
 import { useState, useEffect } from 'react';
 
 
 export default function Projects({ userSettings }) {
   const appMap = {
-    'ZenAI': {
-      name: 'ZenAI',
-      icon: "https://raw.githubusercontent.com/ZenxyNC/zenai/refs/heads/main/src/resource/icon.svg",
-      url: 'https://zenxync.github.io/zenai/',
-    },
     'ZenCourse': {
       name: 'ZenCourse',
       icon: "https://raw.githubusercontent.com/ZenxyNC/zencourse/refs/heads/main/src/resource/Icon.png",
