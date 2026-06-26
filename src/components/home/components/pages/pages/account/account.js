@@ -5,30 +5,25 @@ import AutoLogin from './components/autologin/autologin';
 import Logout from './components/logout/logout';
 import EditDetails from './components/editdetails/editdetails';
 
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-import { _ASSETS } from '../../../../../login/secured-login/loginAssets'
+import { useState } from 'react';
 
 export default function Account({ AlertStructure, setAlertStructure }) {
   
-  const navigate = useNavigate();
   const [userInfo] = useState(getSavedInfo());
 
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-user-info'))
       const zencoreInfo_parsed = JSON.parse(localStorage.getItem('zencore-info'))
       userdata_object = {
-        username: userInfo_parsed.id,
-        license: _ASSETS[userInfo_parsed.id].credentials.license,
-        email: _ASSETS[userInfo_parsed.id].credentials.email,
-        phone: _ASSETS[userInfo_parsed.id].credentials.phone,
-        isAutoLogin: zencoreInfo_parsed.isAutoLogin
+        username: userInfo_parsed.username,
+        email: userInfo_parsed.email,
+        phone: userInfo_parsed.phone,
+        isAutoLogin: zencoreInfo_parsed.isAutoLogin || false
       }
     } catch (err) {
-      navigate('/login')
+
     }
 
     return userdata_object

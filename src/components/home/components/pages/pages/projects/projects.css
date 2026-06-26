@@ -10,8 +10,8 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
   align-content: start;
+  gap: 20px;
 }
 
 #projects-maindiv::-webkit-scrollbar {
@@ -20,7 +20,6 @@
 
 #AppButton-body {
   width: 100%;
-  min-width: 160px;
   aspect-ratio: 1/1;
 
   background-color: rgb(15, 19, 26, 0.4);
@@ -134,7 +133,7 @@
 
   #AppButton-name {
     font-family: _bold;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: #F5F5F5;
     margin-top: 10px;
 

@@ -7,7 +7,7 @@ import ZenEngineAlert from "./zenengine/alerts"
 import './home.css'
 
 import { useState, useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 export default function Home() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -23,19 +23,17 @@ export default function Home() {
     actionCancel: () => {}
   });
 
-  var navigate = useNavigate();
-
   useEffect(() => {
     try {
-      const savedInfo = JSON.parse(localStorage.getItem('zencore-global-id'));
-      if (savedInfo.id && savedInfo.password_hashed) {
+      const savedInfo = JSON.parse(localStorage.getItem('zencore-user-info'));
+      if (savedInfo.username && savedInfo.password_hashed) {
         getUserSettings()
       } else {
         throw new Error("Incomplete required data.")
       }
     } catch (err) {
       //Redirect if user is not logged in.
-      navigate('/login')
+      window.location.href = "https://zenxync.github.io/zenaccount/loginprovider?appOrigin=zencore"
     }
     //eslint-disable-next-line
   }, [])

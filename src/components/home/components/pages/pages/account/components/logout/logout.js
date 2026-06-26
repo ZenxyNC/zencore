@@ -1,12 +1,10 @@
 import './logout.css'
-import { useNavigate } from 'react-router-dom'
 
 export default function Logout({ username, AlertStructure, setAlertStructure }) {
-  var navigate = useNavigate();
 
   function handleLogout() {
     localStorage.setItem('zencore-info', JSON.stringify({isLoggedIn:false, isAutoLogin: false}))
-    navigate('/login')
+    window.location.href = "https://zenxync.github.io/zenaccount/loginprovider?appOrigin=zencore"
   }
 
   return(

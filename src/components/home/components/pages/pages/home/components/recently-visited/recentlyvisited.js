@@ -3,8 +3,6 @@ import './recentlyvisited.css';
 import AppButton from './appbutton';
 import { useState, useEffect } from 'react';
 
-import ZenGuard from '../../../../../../../../resources/appicon/ZenGuard.png'
-
 export default function RecentVisit({ userSettings }) {
 
 const appMap = {
@@ -47,6 +45,11 @@ const appMap = {
       name: 'ZenApps',
       icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zenapps.png",
       url: 'https://zenxync.github.io/zenapps/',
+    },
+    'ZenAccount': {
+      name: 'ZenAccount',
+      icon: "https://github.com/ZenxyNC/zenaccount/blob/60cc10901910f9540ec473242bb2d184b3ccbb63/src/resources/ZenAccount.png?raw=true",
+      url: 'https://zenxync.github.io/zenaccount/',
     }
   }
 

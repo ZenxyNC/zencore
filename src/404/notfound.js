@@ -21,7 +21,7 @@ export default function NotFound() {
     if(redirectPrompt === "Home") {
       navigate('/home')
     } else {
-      navigate('/login')
+      window.location.href = "https://zenxync.github.io/zenaccount/loginprovider?appOrigin=zencore"
     }
   }
 

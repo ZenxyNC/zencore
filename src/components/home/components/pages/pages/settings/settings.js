@@ -1,6 +1,5 @@
 import './settings.css';
 import Switch from './components/switch';
-import { useEffect } from 'react';
 
 export default function Settings({ userSettings, setUserSettings, AlertStructure, setAlertStructure }) {
 

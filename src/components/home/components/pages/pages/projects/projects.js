@@ -6,7 +6,7 @@ import AppButton from './appbutton';
 import { useState, useEffect } from 'react';
 
 
-export default function Projects({ userSettings }) {
+export default function Projects({ userSettings, AlertStructure, setAlertStructure }) {
   const appMap = {
     'ZenCourse': {
       name: 'ZenCourse',
@@ -42,6 +42,11 @@ export default function Projects({ userSettings }) {
       name: 'ZenApps',
       icon: "https://raw.githubusercontent.com/ZenxyNC/zendocs/refs/heads/main/public/resources/AppIcon/zenapps.png",
       url: 'https://zenxync.github.io/zenapps/',
+    },
+    'ZenAccount': {
+      name: 'ZenAccount',
+      icon: "https://github.com/ZenxyNC/zenaccount/blob/60cc10901910f9540ec473242bb2d184b3ccbb63/src/resources/ZenAccount.png?raw=true",
+      url: 'https://zenxync.github.io/zenaccount/',
     }
   }
 
@@ -88,6 +93,8 @@ export default function Projects({ userSettings }) {
             url={value.url}
             openIn={userSettings?.openProjectIn}
             addVisit={addVisit}
+            AlertStructure={AlertStructure} 
+            setAlertStructure={setAlertStructure}
           />
         ))}
       </div>

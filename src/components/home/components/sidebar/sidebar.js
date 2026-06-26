@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams  } from 'react-router-dom';
 import './sidebar.css';
 
-import { _ASSETS } from '../../../login/secured-login/loginAssets';
-
 export default function Sidebar({ visible, setVisible, userSettings }) {
-  const navigate = useNavigate();
   const [userinfo] = useState(getSavedInfo() || { username: '', license: '', email: '', phone: '' });
   const [currentPage, setCurrentPage] = useState('home');
   const [searchParams, setSearchParams] = useSearchParams();
@@ -17,7 +14,7 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
 
   function handleNavigation(page) {
     setSearchParams({ page }); // sets ?page=projects, etc.
-    setVisible(false); // optionally hide sidebar after click
+    setVisible(false); // hide sidebar after click
   }
 
   function handlePageChange(target) {
@@ -28,15 +25,16 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-user-info'))
       userdata_object = {
-        username: userInfo_parsed.id,
-        license: _ASSETS[userInfo_parsed.id].credentials.license,
-        email: _ASSETS[userInfo_parsed.id].credentials.email,
-        phone: _ASSETS[userInfo_parsed.id].credentials.phone,
+        username: userInfo_parsed.username,
+        first_name: userInfo_parsed.first_name,
+        last_name: userInfo_parsed.last_name,
+        email: userInfo_parsed.email,
+        phone: userInfo_parsed.phone,
       }
     } catch (err) {
-      navigate('/zencore/login')
+
     }
 
     return userdata_object
@@ -44,11 +42,10 @@ export default function Sidebar({ visible, setVisible, userSettings }) {
 
   function findInitial() {
     try {
-      const [fname, lname] = userinfo.username.split(" ");
-      const defineFirstLetter = fname[0] + lname[0];
+      const defineFirstLetter = userinfo.first_name[0] + userinfo.last_name[0];
       return defineFirstLetter
     } catch (err) {
-      navigate('/login')
+
     }
   }
 

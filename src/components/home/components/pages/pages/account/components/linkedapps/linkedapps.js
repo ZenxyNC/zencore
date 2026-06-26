@@ -15,6 +15,7 @@ export default function LinkedApps() {
           <li>ZenEngine</li>
           <li>ZenDocs</li>
           <li>ZenApps</li>
+          <li>ZenAccount</li>
         </ul>
       </div>
     </>

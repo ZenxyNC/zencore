@@ -77,26 +77,29 @@
 /*===== Alert Type (Icon & Title) =====*/
 #alert-type {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 20px;
 
-  width: max-content;
-  height: 60px;
+  width: 100%;
+  height: max-content;
+  background-color: transparent;
 }
 
 #alert-title {
   font-size: 28px !important;
-  color: #F5F5F5
+  color: #F5F5F5;
+  width: calc(100% - 82px);
+  background-color: transparent;
+  margin: 0
 }
 
 #alert-icon {
   width: 60px;
   height: 60px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-content: center;
 
   border-radius: 60px;
   border: 1px solid rgb(245, 245, 245, 0.2); /*F5F5F5, 20%*/

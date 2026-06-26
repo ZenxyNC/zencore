@@ -1,30 +1,25 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './userGreeting.css';
-import { _ASSETS } from '../../../../../../../login/secured-login/loginAssets';
 
 export default function UserGreeting() {
-  var navigate = useNavigate();
   const [userInfo] = useState(getSavedInfo());
   const [timeInfo, setTimeInfo] = useState(getTime("self-request"))
 
   function getSavedInfo() {
     var userdata_object
     try {
-      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-global-id'))
-      const [get_fname, get_lname] = userInfo_parsed.id.split(" ")
+      const userInfo_parsed = JSON.parse(localStorage.getItem('zencore-user-info'))
       userdata_object = {
         names: {
-          fullname: userInfo_parsed.id,
-          fname: get_fname,
-          lname: get_lname
+          fullname: userInfo_parsed.username,
+          fname: userInfo_parsed.first_name,
+          lname: userInfo_parsed.last_name
         },
-        license: _ASSETS[userInfo_parsed.id].credentials.license,
-        email: _ASSETS[userInfo_parsed.id].credentials.email,
-        phone: _ASSETS[userInfo_parsed.id].credentials.phone,
+        email: userInfo_parsed.email,
+        phone: userInfo_parsed.phone,
       }
     } catch (err) {
-      navigate('/zencore/login')
+      
     }
 
     return userdata_object

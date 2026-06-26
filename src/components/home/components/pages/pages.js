@@ -4,7 +4,7 @@ import HomePage from './pages/home/home';
 import Account from './pages/account/account';
 import Settings from './pages/settings/settings';
 import './pages.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ export default function Pages({
   return (
     <div id="pages-maindiv">
       {page === "home" && <HomePage userSettings={userSettings} />}
-      {page === "projects" && <Projects userSettings={userSettings} />}
+      {page === "projects" && <Projects userSettings={userSettings} AlertStructure={AlertStructure} setAlertStructure={setAlertStructure} />}
       {page === "account" && <Account 
         AlertStructure={AlertStructure} setAlertStructure={setAlertStructure}  
       />}

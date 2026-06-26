@@ -1,10 +1,40 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-export default function AppButton({img, appname, url, openIn, addVisit}) {
+export default function AppButton({img, appname, url, openIn, addVisit, AlertStructure, setAlertStructure}) {
+
+  const notAvailableForPublic = [
+    "ZenAccount",
+    "ZenBase"
+  ]
 
 
   function redirect() {
+    if(notAvailableForPublic.includes(appname)) {
+      setAlertStructure((prev) => ({
+        ...prev,
+        isOpened : true,
+        type: "confirmation",
+        title : "Not Available For Public",
+        message : `${appname} doesn't meant for public access and you might encounter some errors and warnings. Open anyway?`,
+        actionOk: () => {
+          addVisit(appname)
+          if(openIn === "currenttab"){
+            window.location.href = url
+          } else if (openIn === "newtab") {
+            window.open(url, '_blank');
+          }
+        },
+        actionCancel: () => {
+          setAlertStructure((prev) => ({
+            ...prev,
+            isOpened: false
+          }))
+        }
+      }))
+      return
+    }
+
     addVisit(appname)
     if(openIn === "currenttab"){
       window.location.href = url
