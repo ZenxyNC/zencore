@@ -1,30 +1,20 @@
 import './autologin.css'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function AutoLogin({ autoLoginState }) {
-  const [isAutoLogin, setAutoLogin] = useState(autoLoginState);
+export default function AutoLogin({ userSettings, setUserSettings }) {
 
   function handleChange() {
-    const zencoreInfo_parsed = JSON.parse(localStorage.getItem('zencore-info'))
-    
-    // Update only the isAutoLogin property
-    const updatedInfo = {
-      ...zencoreInfo_parsed,  // Spread existing properties
-      isAutoLogin: !isAutoLogin  // Toggle only this property
-    }
-    
-    // Save back to localStorage
-    localStorage.setItem('zencore-info', JSON.stringify(updatedInfo))
-    
-    // Update state
-    setAutoLogin(!isAutoLogin)
+    setUserSettings({
+      ...userSettings,
+      isAutoLogin: !userSettings.isAutoLogin
+    })
   }
 
   return(
     <>
       <div 
-        className={`componentbody ${isAutoLogin ? 'active' : 'inactive'}`} 
+        className={`componentbody ${userSettings?.isAutoLogin ? 'active' : 'inactive'}`} 
         id="autoLogin-body"
         role='button'
         tabIndex={0}
@@ -32,7 +22,7 @@ export default function AutoLogin({ autoLoginState }) {
       >
         <div id='autoLogin-title'>
           Auto<br/>Login
-          <div id='autoLogin-indicator'> {isAutoLogin ? 'is active' : 'is inactive'} </div>  
+          <div id='autoLogin-indicator'> {userSettings?.isAutoLogin ? 'is active' : 'is inactive'} </div>  
         </div>
       </div>
     </>

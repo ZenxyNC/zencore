@@ -3,7 +3,8 @@ import './logout.css'
 export default function Logout({ username, AlertStructure, setAlertStructure }) {
 
   function handleLogout() {
-    localStorage.setItem('zencore-info', JSON.stringify({isLoggedIn:false, isAutoLogin: false}))
+    localStorage.setItem('zencore-info', JSON.stringify({ isAutoLogin: false }))
+    localStorage.removeItem('zencore-user-info')
     window.location.href = "https://zenxync.github.io/zenaccount/loginprovider?appOrigin=zencore"
   }
 

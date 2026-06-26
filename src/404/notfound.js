@@ -8,9 +8,11 @@ export default function NotFound() {
 
   function getSavedInfo() {
     try {
-      const savedInfo = JSON.parse(localStorage.getItem('zencore-info'));
-      if(savedInfo.isLoggedIn === true) {
+      const savedInfo = JSON.parse(localStorage.getItem('zencore-user-info'));
+      if(savedInfo.username) {
         return "Home"
+      } else {
+        return "Login"
       }
     } catch(error) {
       return "Login"

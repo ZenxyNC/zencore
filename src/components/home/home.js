@@ -51,10 +51,18 @@ export default function Home() {
           setSearchParams({ page: 'projects' });
         }
       } else {
-        //No action
+        throw new Error("Local settings not found.")
       }
-    } finally {
-
+    } catch (err) {
+      console.log(err)
+      localStorage.setItem('zencore-usersettings', JSON.stringify({
+        hideContact: false,
+        animatedBackground: false,
+        openAtStart: "home",
+        openProjectIn: "currenttab",
+        isAutoLogin: false
+      }))
+      getUserSettings()
     }
   }
 
