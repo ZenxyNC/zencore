@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zencore/static/css/main.d75fb573.css",
-    "main.js": "/zencore/static/js/main.227caa46.js",
+    "main.js": "/zencore/static/js/main.35f15e98.js",
     "static/js/453.571a097c.chunk.js": "/zencore/static/js/453.571a097c.chunk.js",
     "static/media/PlusJakartaSans-SemiBold.ttf": "/zencore/static/media/PlusJakartaSans-SemiBold.cf92107f36f071f6384c.ttf",
     "static/media/PlusJakartaSans-Medium.ttf": "/zencore/static/media/PlusJakartaSans-Medium.f78ffc04acb877ce387e.ttf",
@@ -14,11 +14,11 @@
     "static/media/dots-menu.svg": "/zencore/static/media/dots-menu.9adb527ff3011e6f1515.svg",
     "index.html": "/zencore/index.html",
     "main.d75fb573.css.map": "/zencore/static/css/main.d75fb573.css.map",
-    "main.227caa46.js.map": "/zencore/static/js/main.227caa46.js.map",
+    "main.35f15e98.js.map": "/zencore/static/js/main.35f15e98.js.map",
     "453.571a097c.chunk.js.map": "/zencore/static/js/453.571a097c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d75fb573.css",
-    "static/js/main.227caa46.js"
+    "static/js/main.35f15e98.js"
   ]
 }
